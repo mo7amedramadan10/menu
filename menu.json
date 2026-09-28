@@ -1,0 +1,552 @@
+{
+ "whatsapp": "01109270440",
+ "deliveryFee": 0,
+ "sections": [
+  {
+   "id": "beef",
+   "title": "بيف برجر",
+   "short": "بيف برجر",
+   "layout": "cards",
+   "color": "yellow",
+   "sizes": [
+    "سنجل",
+    "دبل"
+   ],
+   "prefix": "",
+   "note": "كل برجر متاح سنجل أو دبل",
+   "banner": "",
+   "items": [
+    {
+     "id": "i1",
+     "name": "برجر كلاسيك",
+     "img": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      120,
+      175
+     ]
+    },
+    {
+     "id": "i2",
+     "name": "برجر هالبينو",
+     "img": "https://images.unsplash.com/photo-1610970878459-a0e464d7592b?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      140,
+      195
+     ]
+    },
+    {
+     "id": "i3",
+     "name": "برجر باربيكيو",
+     "img": "https://images.unsplash.com/photo-1603064752734-4c48eff53d05?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      125,
+      180
+     ]
+    },
+    {
+     "id": "i4",
+     "name": "برجر موتزريلا استيكس",
+     "img": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      140,
+      195
+     ]
+    },
+    {
+     "id": "i5",
+     "name": "برجر مكس تشيز",
+     "img": "https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      150,
+      200
+     ]
+    },
+    {
+     "id": "i6",
+     "name": "برجر بيض",
+     "img": "https://images.unsplash.com/photo-1713330801172-03f8d1c0dde7?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      150,
+      205
+     ]
+    },
+    {
+     "id": "i7",
+     "name": "برجر أونيون رينج",
+     "img": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      140,
+      195
+     ]
+    },
+    {
+     "id": "i8",
+     "name": "برجر تركي",
+     "img": "https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      140,
+      195
+     ]
+    },
+    {
+     "id": "i9",
+     "name": "برجر بيج تيستي",
+     "img": "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      140,
+      195
+     ]
+    },
+    {
+     "id": "i10",
+     "name": "برجر روز بيف",
+     "img": "https://images.unsplash.com/photo-1549611016-3a70d82b5040?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      140,
+      195
+     ]
+    },
+    {
+     "id": "i11",
+     "name": "برجر رانش",
+     "img": "https://images.unsplash.com/photo-1667329829058-ac191ba4a905?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      140,
+      195
+     ]
+    },
+    {
+     "id": "i12",
+     "name": "برجر مكسات",
+     "img": "https://images.unsplash.com/photo-1551782450-17144efb9c50?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "prices": [
+      null,
+      200
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chicken",
+   "title": "تشيكن برجر",
+   "short": "تشيكن برجر",
+   "layout": "cards",
+   "color": "yellow",
+   "prefix": "",
+   "note": "",
+   "banner": "",
+   "items": [
+    {
+     "id": "i13",
+     "name": "تشيكن كلاسيك",
+     "img": "https://images.unsplash.com/photo-1637710847214-f91d99669e18?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "price": 120
+    },
+    {
+     "id": "i14",
+     "name": "تشيكن هالبينو",
+     "img": "https://images.unsplash.com/photo-1692737349870-e3bfc704ebf9?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "price": 140
+    },
+    {
+     "id": "i15",
+     "name": "تشيكن باربيكيو",
+     "img": "https://images.unsplash.com/photo-1703219342329-fce8488cf443?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "price": 125
+    },
+    {
+     "id": "i16",
+     "name": "تشيكن موتزريلا استيكس",
+     "img": "https://images.unsplash.com/photo-1671106571674-a89083d27e60?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "price": 140
+    },
+    {
+     "id": "i17",
+     "name": "تشيكن مكس تشيز",
+     "img": "https://images.unsplash.com/photo-1692737348416-0a4fa4cf1523?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "price": 150
+    },
+    {
+     "id": "i18",
+     "name": "تشيكن تركي",
+     "img": "https://images.unsplash.com/photo-1671522635501-f03491b207e6?auto=format&fit=crop&w=480&q=70",
+     "pos": "50% 50%",
+     "hidden": false,
+     "price": 140
+    },
+    {
+     "id": "i19",
+     "name": "تشيكن أونيون رينج",
+     "img": "https://images.unsplash.com/photo-1637710847214-f91d99669e18?auto=format&fit=crop&w=480&q=70",
+     "pos": "20% 70%",
+     "hidden": false,
+     "price": 140
+    },
+    {
+     "id": "i20",
+     "name": "تشيكن روز بيف",
+     "img": "https://images.unsplash.com/photo-1692737349870-e3bfc704ebf9?auto=format&fit=crop&w=480&q=70",
+     "pos": "80% 35%",
+     "hidden": false,
+     "price": 140
+    },
+    {
+     "id": "i21",
+     "name": "تشيكن بيج تيستي",
+     "img": "https://images.unsplash.com/photo-1671106571674-a89083d27e60?auto=format&fit=crop&w=480&q=70",
+     "pos": "75% 65%",
+     "hidden": false,
+     "price": 140
+    },
+    {
+     "id": "i22",
+     "name": "تشيكن رانش",
+     "img": "https://images.unsplash.com/photo-1692737348416-0a4fa4cf1523?auto=format&fit=crop&w=480&q=70",
+     "pos": "25% 35%",
+     "hidden": false,
+     "price": 140
+    },
+    {
+     "id": "i23",
+     "name": "تشيكن مكسات",
+     "img": "https://images.unsplash.com/photo-1703219342329-fce8488cf443?auto=format&fit=crop&w=480&q=70",
+     "pos": "85% 50%",
+     "hidden": false,
+     "price": 200
+    }
+   ]
+  },
+  {
+   "id": "sandwich",
+   "title": "سندوتشات ميكسات",
+   "short": "سوري وفرنساوي",
+   "layout": "list",
+   "color": "red",
+   "prefix": "سندوتش",
+   "breads": [
+    "سوري",
+    "فرنساوي"
+   ],
+   "note": "اختار العيش: سوري أو فرنساوي، نفس السعر",
+   "banner": "https://images.unsplash.com/photo-1559054663-e8d23213f55c?auto=format&fit=crop&w=1000&q=70",
+   "items": [
+    {
+     "id": "i24",
+     "name": "بطاطس",
+     "price": 45,
+     "hidden": false
+    },
+    {
+     "id": "i25",
+     "name": "بطاطس بالجبنة",
+     "price": 55,
+     "hidden": false
+    },
+    {
+     "id": "i26",
+     "name": "بطاطس هوت دوج",
+     "price": 65,
+     "hidden": false
+    },
+    {
+     "id": "i27",
+     "name": "بطاطس كبدة",
+     "price": 65,
+     "hidden": false
+    },
+    {
+     "id": "i28",
+     "name": "بطاطس سجق",
+     "price": 65,
+     "hidden": false
+    },
+    {
+     "id": "i29",
+     "name": "بطاطس استربس",
+     "price": 90,
+     "hidden": false
+    },
+    {
+     "id": "i30",
+     "name": "بطاطس بانيه",
+     "price": 90,
+     "hidden": false
+    },
+    {
+     "id": "i31",
+     "name": "بطاطس كفتة",
+     "price": 90,
+     "hidden": false
+    },
+    {
+     "id": "i32",
+     "name": "بطاطس مكسات",
+     "price": 100,
+     "hidden": false
+    },
+    {
+     "id": "i33",
+     "name": "بطاطس كوردون بلو",
+     "price": 100,
+     "hidden": false
+    }
+   ]
+  },
+  {
+   "id": "baladi",
+   "title": "سندوتشات عيش بلدي",
+   "short": "عيش بلدي",
+   "layout": "list",
+   "color": "red",
+   "prefix": "سندوتش عيش بلدي",
+   "note": "",
+   "banner": "https://images.unsplash.com/photo-1598679253544-2c97992403ea?auto=format&fit=crop&w=1000&q=70",
+   "items": [
+    {
+     "id": "i34",
+     "name": "بطاطس",
+     "price": 20,
+     "hidden": false
+    },
+    {
+     "id": "i35",
+     "name": "بطاطس بالجبنة",
+     "price": 25,
+     "hidden": false
+    },
+    {
+     "id": "i36",
+     "name": "بطاطس مكسات",
+     "price": 35,
+     "hidden": false
+    },
+    {
+     "id": "i37",
+     "name": "بطاطس هوت دوج",
+     "price": 35,
+     "hidden": false
+    },
+    {
+     "id": "i38",
+     "name": "بطاطس كبدة",
+     "price": 35,
+     "hidden": false
+    },
+    {
+     "id": "i39",
+     "name": "بطاطس سجق",
+     "price": 35,
+     "hidden": false
+    },
+    {
+     "id": "i40",
+     "name": "بطاطس استربس",
+     "price": 45,
+     "hidden": false
+    },
+    {
+     "id": "i41",
+     "name": "بطاطس كفتة",
+     "price": 45,
+     "hidden": false
+    },
+    {
+     "id": "i42",
+     "name": "بطاطس بانيه",
+     "price": 45,
+     "hidden": false
+    }
+   ]
+  },
+  {
+   "id": "plates",
+   "title": "أطباق بطاطس ميكسات",
+   "short": "أطباق بطاطس",
+   "layout": "list",
+   "color": "red",
+   "prefix": "طبق",
+   "note": "",
+   "banner": "https://images.unsplash.com/photo-1639744210631-209fce3e256c?auto=format&fit=crop&w=1000&q=70",
+   "items": [
+    {
+     "id": "i43",
+     "name": "بطاطس",
+     "price": 35,
+     "hidden": false
+    },
+    {
+     "id": "i44",
+     "name": "بطاطس مكس تشيز",
+     "price": 50,
+     "hidden": false
+    },
+    {
+     "id": "i45",
+     "name": "بطاطس كبدة",
+     "price": 75,
+     "hidden": false
+    },
+    {
+     "id": "i46",
+     "name": "بطاطس سجق",
+     "price": 75,
+     "hidden": false
+    },
+    {
+     "id": "i47",
+     "name": "بطاطس هوت دوج",
+     "price": 75,
+     "hidden": false
+    },
+    {
+     "id": "i48",
+     "name": "بطاطس استربس",
+     "price": 90,
+     "hidden": false
+    },
+    {
+     "id": "i49",
+     "name": "بطاطس بانيه",
+     "price": 90,
+     "hidden": false
+    }
+   ]
+  },
+  {
+   "id": "extras",
+   "title": "إضافات",
+   "short": "إضافات",
+   "layout": "list",
+   "color": "red",
+   "prefix": "",
+   "note": "",
+   "banner": "https://images.unsplash.com/photo-1647705195905-671a25be159d?auto=format&fit=crop&w=1000&q=70",
+   "items": [
+    {
+     "id": "i50",
+     "name": "صوص رانش",
+     "price": 20,
+     "hidden": false
+    },
+    {
+     "id": "i51",
+     "name": "صوص شيدر",
+     "price": 20,
+     "hidden": false
+    },
+    {
+     "id": "i52",
+     "name": "صوص بيج تيستي",
+     "price": 20,
+     "hidden": false
+    },
+    {
+     "id": "i53",
+     "name": "صوص كوكتيل",
+     "price": 20,
+     "hidden": false
+    },
+    {
+     "id": "i54",
+     "name": "صوص باربيكيو",
+     "price": 20,
+     "hidden": false
+    },
+    {
+     "id": "i55",
+     "name": "طحينة",
+     "price": 15,
+     "hidden": false
+    },
+    {
+     "id": "i56",
+     "name": "حلقات بصل",
+     "price": 20,
+     "hidden": false
+    },
+    {
+     "id": "i57",
+     "name": "تركي مدخن",
+     "price": 20,
+     "hidden": false
+    },
+    {
+     "id": "i58",
+     "name": "روز بيف",
+     "price": 20,
+     "hidden": false
+    },
+    {
+     "id": "i59",
+     "name": "موتزريلا استيكس",
+     "price": 20,
+     "hidden": false
+    }
+   ]
+  },
+  {
+   "id": "drinks",
+   "title": "مشروبات",
+   "short": "مشروبات",
+   "layout": "list",
+   "color": "red",
+   "prefix": "",
+   "note": "",
+   "banner": "",
+   "items": [
+    {
+     "id": "i60",
+     "name": "مياه صغيرة",
+     "price": 10,
+     "hidden": false
+    },
+    {
+     "id": "i61",
+     "name": "مياه كبيرة",
+     "price": 20,
+     "hidden": false
+    },
+    {
+     "id": "i62",
+     "name": "مياه غازية",
+     "price": 20,
+     "hidden": false
+    }
+   ]
+  }
+ ]
+}

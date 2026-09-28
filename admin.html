@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="dark">
+<title>ميكسات | لوحة التحكم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wood:#24150d; --board:#33200f; --board-2:#3d2716;
+  --flame:#e3262d; --mustard:#ffc21a; --green:#25d366;
+  --cream:#fff3df; --muted:#c7ab8d; --line:rgba(255,243,223,.14);
+  --display:"Lalezar","Arial Black",system-ui,sans-serif;
+  --text:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--wood);color:var(--cream);font:16px/1.5 var(--text)}
+header{position:sticky;top:0;z-index:5;background:rgba(30,17,10,.96);border-bottom:1px solid rgba(238,122,42,.35);
+  display:flex;align-items:center;gap:10px;padding:10px 16px;flex-wrap:wrap}
+header h1{font:400 1.5rem var(--display);color:var(--mustard);margin:0;flex:1}
+header a{color:var(--muted);font-size:.9rem}
+main{max-width:760px;margin:0 auto;padding:16px 16px 120px}
+.box{background:linear-gradient(180deg,var(--board-2),var(--board));border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:14px}
+.box h2{font:400 1.35rem var(--display);margin:0 0 8px;color:var(--mustard)}
+label{display:block;font-size:.88rem;color:var(--muted);margin:10px 0 4px}
+input[type=text],input[type=number],input[type=password],input[type=url],input[type=tel]{width:100%;background:rgba(0,0,0,.35);border:1.5px solid var(--line);
+  border-radius:10px;color:var(--cream);font:1rem var(--text);padding:9px 11px}
+input:focus{outline:none;border-color:var(--mustard)}
+input[type=number]{direction:ltr;text-align:center}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+button{font:600 .95rem var(--text);cursor:pointer;border-radius:999px;border:0;padding:9px 18px}
+.pri{background:var(--mustard);color:#2a1606}
+.ghost{background:rgba(255,255,255,.08);color:var(--cream)}
+.danger{background:none;color:#ff8a8a}
+.help{color:var(--muted);font-size:.9rem;line-height:1.8}
+.help ol{padding-inline-start:20px;margin:6px 0}
+.help a{color:var(--mustard)}
+.help code{background:rgba(0,0,0,.35);padding:1px 6px;border-radius:6px}
+details.sec{background:linear-gradient(180deg,var(--board-2),var(--board));border:1px solid var(--line);border-radius:16px;margin-bottom:12px}
+details.sec>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary .t{font:400 1.3rem var(--display);flex:1}
+details.sec>summary .c{color:var(--muted);font-size:.85rem}
+details.sec>summary::after{content:"▾";color:var(--mustard);transition:transform .2s}
+details.sec[open]>summary::after{transform:rotate(180deg)}
+.secbody{padding:0 16px 16px}
+.item{border-top:1px dashed var(--line);padding:12px 0;display:grid;gap:8px}
+.item.off{opacity:.55}
+.item .top{display:flex;gap:8px;align-items:center}
+.item .top input[type=text]{flex:1}
+.prices{display:flex;gap:8px;flex-wrap:wrap}
+.prices label{margin:0;display:flex;align-items:center;gap:6px;flex:1;min-width:120px}
+.prices input{flex:1;min-width:70px}
+.tools{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tools button{padding:6px 12px;font-size:.85rem}
+.sw{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-size:.9rem;margin-inline-end:auto}
+.sw input{width:40px;height:22px;appearance:none;background:#6b5a4a;border-radius:999px;position:relative;cursor:pointer;margin:0;transition:.2s}
+.sw input::after{content:"";position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.2s}
+.sw input:checked{background:var(--green)}
+.sw input:checked::after{right:21px}
+.imgrow{display:flex;gap:10px;align-items:center}
+.imgrow img{width:64px;height:64px;object-fit:cover;border-radius:10px;background:#2a1a10;flex:none}
+.imgrow .col{flex:1;display:grid;gap:6px;min-width:0}
+.imgrow .col .tools button{font-size:.8rem}
+.add{width:100%;margin-top:10px;border:1.5px dashed var(--mustard);background:none;color:var(--mustard);border-radius:12px}
+.savebar{position:fixed;inset-inline:0;bottom:0;z-index:6;padding:12px 16px;background:linear-gradient(180deg,transparent,rgba(20,11,6,.97) 35%);
+  display:flex;justify-content:center;gap:10px;align-items:center}
+.savebar button{font:400 1.25rem var(--display);padding:11px 34px 8px;background:var(--green);color:#fff;box-shadow:0 3px 0 #178a42}
+.savebar button:disabled{background:#6b5a4a;box-shadow:none;cursor:default}
+.status{position:fixed;top:64px;left:50%;transform:translateX(-50%);z-index:9;background:#150b05;border:1px solid var(--mustard);
+  padding:9px 16px;border-radius:12px;max-width:92vw;display:none;text-align:center}
+.status.on{display:block}
+.status.err{border-color:var(--flame);color:#ffb3b3}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header><h1>لوحة تحكم ميكسات</h1><a href="./" target="_blank">فتح المنيو ↗</a><button class="ghost" id="logout" type="button" hidden>خروج</button></header>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+
+<main>
+  <section class="box" id="login">
+    <h2>تسجيل الدخول</h2>
+    <p class="help">الصفحة دي بتعدّل المنيو مباشرة على GitHub. محتاج <b>مفتاح (Token)</b> مرة واحدة بس على كل جهاز:</p>
+    <div class="help"><ol>
+      <li>افتح <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">صفحة إنشاء Token</a>.</li>
+      <li>في <b>Token name</b> اكتب <code>menu admin</code>، وفي <b>Expiration</b> اختار أطول مدة متاحة.</li>
+      <li>في <b>Resource owner</b> اختار <code>mixateg</code>.</li>
+      <li>في <b>Repository access</b> اختار <b>Only select repositories</b> ثم <code>menu</code>.</li>
+      <li>في <b>Permissions</b> ← <b>Repository permissions</b> ← <b>Contents</b> اختار <b>Read and write</b>.</li>
+      <li>دوس <b>Generate token</b>، انسخه، والصقه هنا.</li>
+    </ol></div>
+    <label for="tok">الـ Token</label>
+    <input type="password" id="tok" dir="ltr" autocomplete="off" placeholder="github_pat_...">
+    <p style="margin:12px 0 0"><button class="pri" id="loginBtn" type="button">دخول</button></p>
+    <p class="help">المفتاح بيتحفظ على الجهاز ده بس. متديهوش لحد، ولو اتسرّب امسحه من نفس صفحة GitHub.</p>
+  </section>
+
+  <div id="editor" hidden>
+    <section class="box">
+      <h2>إعدادات عامة</h2>
+      <div class="row2">
+        <div><label for="fee">مصاريف التوصيل (ج) — 0 يعني مش محسوبة</label><input type="number" id="fee" min="0" inputmode="numeric"></div>
+        <div><label for="wa">رقم واتساب استلام الطلبات</label><input type="tel" id="wa" dir="ltr"></div>
+      </div>
+    </section>
+    <div id="sections"></div>
+  </div>
+</main>
+
+<div class="savebar" id="savebar" hidden><button id="save" type="button" disabled>حفظ التعديلات</button></div>
+<input type="file" id="filePick" accept="image/*" hidden>
+
+<script>
+(function(){
+  var OWNER='mixateg', REPO='menu', BRANCH='main', PATH='menu.json', TKEY='mixat-admin-token';
+  var API='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/';
+  var token='', sha='', M=null, dirty=false, saving=false;
+  var $=function(id){return document.getElementById(id)};
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+  function get(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
+  function set(k,v){try{v?localStorage.setItem(k,v):localStorage.removeItem(k)}catch(e){}}
+  var st=$('status'),stT;
+  function status(msg,err,stay){st.textContent=msg;st.className='status on'+(err?' err':'');clearTimeout(stT);if(!stay)stT=setTimeout(function(){st.className='status'},err?7000:3500)}
+  function b64enc(s){return btoa(unescape(encodeURIComponent(s)))}
+  function b64dec(s){return decodeURIComponent(escape(atob(s.replace(/\s/g,''))))}
+  function gh(path,opt){
+    opt=opt||{};opt.headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+    return fetch(API+path,opt).then(function(r){
+      return r.json().catch(function(){return {}}).then(function(j){if(!r.ok){var e=new Error(j.message||('HTTP '+r.status));e.code=r.status;throw e}return j});
+    });
+  }
+  function explain(e){
+    if(e.code===401)return 'الـ Token غلط أو انتهت صلاحيته. اعمل واحد جديد.';
+    if(e.code===403||e.code===404)return 'الـ Token مالوش صلاحية على mixateg/menu. اتأكد إنك اخترت الـ repo وصلاحية Contents: Read and write (ولو الـ Organization طالبة موافقة، وافق عليه من إعداداتها).';
+    if(e.code===409)return 'حد عدّل المنيو من مكان تاني. اعمل تحديث للصفحة وعدّل تاني.';
+    return 'حصلت مشكلة: '+e.message;
+  }
+  function markDirty(){dirty=true;$('save').disabled=false}
+  window.addEventListener('beforeunload',function(e){if(dirty){e.preventDefault();e.returnValue=''}});
+
+  function login(t){
+    token=t.trim();if(!token)return;
+    status('جاري التحميل…',false,true);
+    gh(PATH+'?ref='+BRANCH).then(function(j){
+      sha=j.sha;M=JSON.parse(b64dec(j.content));
+      set(TKEY,token);$('login').hidden=true;$('editor').hidden=false;$('savebar').hidden=false;$('logout').hidden=false;
+      render();status('تم التحميل ✓');
+    }).catch(function(e){set(TKEY,'');$('login').hidden=false;status(explain(e),true)});
+  }
+  $('loginBtn').onclick=function(){login($('tok').value)};
+  $('tok').addEventListener('keydown',function(e){if(e.key==='Enter')login(this.value)});
+  $('logout').onclick=function(){if(dirty&&!confirm('فيه تعديلات مش محفوظة. تخرج برضه؟'))return;set(TKEY,'');dirty=false;location.reload()};
+
+  function num(v){if(v===''||v==null)return null;var n=parseInt(v,10);return isNaN(n)?null:n}
+  function uid(){return 'i'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+  function inp(type,val,on,ph){var i=el('input');i.type=type;i.value=val==null?'':val;if(ph)i.placeholder=ph;
+    i.addEventListener('input',function(){on(i.value);markDirty()});if(type==='number'){i.min=0;i.inputMode='numeric'}return i}
+
+  // image upload: shrink on the phone, commit to images/, return the path
+  var pickCb=null,previews={}; // freshly uploaded images aren't on Pages until the next build
+  $('filePick').addEventListener('change',function(){var f=this.files[0];this.value='';if(f&&pickCb)pickCb(f)});
+  function pickImage(done){pickCb=done;$('filePick').click()}
+  function uploadImage(file,maxW){
+    return new Promise(function(res,rej){
+      var img=new Image(),url=URL.createObjectURL(file);
+      img.onload=function(){
+        var s=Math.min(1,maxW/Math.max(img.width,img.height)),c=document.createElement('canvas');
+        c.width=Math.round(img.width*s);c.height=Math.round(img.height*s);c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+        URL.revokeObjectURL(url);res(c.toDataURL('image/jpeg',.82).split(',')[1]);
+      };
+      img.onerror=function(){rej(new Error('الصورة مش مدعومة'))};img.src=url;
+    }).then(function(b64){
+      var p='images/'+Date.now()+'.jpg';
+      return gh(p,{method:'PUT',body:JSON.stringify({message:'رفع صورة للمنيو',content:b64,branch:BRANCH})}).then(function(){previews[p]='data:image/jpeg;base64,'+b64;return p});
+    });
+  }
+  function imageEditor(obj,field,maxW,label){
+    var row=el('div','imgrow'),th=el('img');th.alt='';
+    function paint(){var v=obj[field];th.src=v?(previews[v]||v):'';th.style.visibility=v?'visible':'hidden'}
+    var col=el('div','col'),u=inp('url',obj[field],function(v){obj[field]=v.trim();paint()},label||'لينك الصورة');u.dir='ltr';
+    var tools=el('div','tools'),up=el('button','ghost','📷 رفع صورة من الجهاز');up.type='button';
+    up.onclick=function(){pickImage(function(f){
+      status('جاري رفع الصورة…',false,true);up.disabled=true;
+      uploadImage(f,maxW).then(function(p){obj[field]=p;u.value=p;paint();markDirty();status('الصورة اترفعت ✓ متنساش تدوس حفظ')})
+        .catch(function(e){status(explain(e),true)}).then(function(){up.disabled=false});
+    })};
+    tools.appendChild(up);col.append(u,tools);row.append(th,col);paint();return row;
+  }
+
+  function render(){
+    $('fee').value=M.deliveryFee||0;$('fee').oninput=function(){M.deliveryFee=num(this.value)||0;markDirty()};
+    $('wa').value=M.whatsapp||'';$('wa').oninput=function(){M.whatsapp=this.value.trim();markDirty()};
+    var wrap=$('sections'),open={};
+    wrap.querySelectorAll('details[open]').forEach(function(d){open[d.dataset.id]=1});
+    wrap.innerHTML='';
+    M.sections.forEach(function(S){
+      var d=el('details','sec');d.dataset.id=S.id;if(open[S.id])d.open=true;
+      var sm=el('summary');var t=el('span','t',S.title);sm.append(t,el('span','c',S.items.length+' صنف'));d.appendChild(sm);
+      var b=el('div','secbody');
+      var r=el('div','row2');
+      var l1=el('label',null,'اسم القسم');var i1=inp('text',S.title,function(v){S.title=v;t.textContent=v});l1.appendChild(i1);
+      var l2=el('label',null,'الاسم في الشريط العلوي');var i2=inp('text',S.short,function(v){S.short=v});l2.appendChild(i2);
+      r.append(l1,l2);b.appendChild(r);
+      var l3=el('label',null,'ملاحظة تحت العنوان (اختياري)');l3.appendChild(inp('text',S.note,function(v){S.note=v}));b.appendChild(l3);
+      if(S.layout!=='cards'){b.appendChild(el('label',null,'صورة القسم (اختياري)'));b.appendChild(imageEditor(S,'banner',1200))}
+
+      S.items.forEach(function(it,idx){
+        var box=el('div','item'+(it.hidden?' off':''));
+        var top=el('div','top');top.appendChild(inp('text',it.name,function(v){it.name=v},'اسم الصنف'));box.appendChild(top);
+        var pr=el('div','prices');
+        if(S.sizes&&S.sizes.length){
+          it.prices=it.prices||[];
+          S.sizes.forEach(function(size,i){var l=el('label',null,size+':');
+            l.appendChild(inp('number',it.prices[i],function(v){it.prices[i]=num(v)},'مش متاح'));pr.appendChild(l)});
+        }else{var l=el('label',null,'السعر:');l.appendChild(inp('number',it.price,function(v){it.price=num(v)}));pr.appendChild(l)}
+        box.appendChild(pr);
+        if(S.layout==='cards')box.appendChild(imageEditor(it,'img',800));
+        var tools=el('div','tools');
+        var sw=el('label','sw'),cb=el('input');cb.type='checkbox';cb.checked=!it.hidden;
+        var swt=el('span',null,it.hidden?'مخفي':'متاح');
+        cb.onchange=function(){it.hidden=!cb.checked;swt.textContent=it.hidden?'مخفي':'متاح';box.classList.toggle('off',it.hidden);markDirty()};
+        sw.append(cb,swt);tools.appendChild(sw);
+        function mv(dir){var j=idx+dir;if(j<0||j>=S.items.length)return;var x=S.items[idx];S.items[idx]=S.items[j];S.items[j]=x;markDirty();render()}
+        var up=el('button','ghost','▲');up.type='button';up.title='لفوق';up.onclick=function(){mv(-1)};up.disabled=idx===0;
+        var dn=el('button','ghost','▼');dn.type='button';dn.title='لتحت';dn.onclick=function(){mv(1)};dn.disabled=idx===S.items.length-1;
+        var del=el('button','danger','مسح');del.type='button';
+        del.onclick=function(){if(confirm('تمسح "'+it.name+'" نهائيًا؟ (لو عايز تخفيه مؤقتًا استخدم زرار متاح)')){S.items.splice(idx,1);markDirty();render()}};
+        tools.append(up,dn,del);box.appendChild(tools);
+        b.appendChild(box);
+      });
+      var add=el('button','add','+ إضافة صنف في '+S.title);add.type='button';
+      add.onclick=function(){
+        var it={id:uid(),name:'',hidden:false};
+        if(S.sizes&&S.sizes.length)it.prices=S.sizes.map(function(){return null});else it.price=null;
+        if(S.layout==='cards'){it.img='';it.pos='50% 50%'}
+        S.items.push(it);markDirty();render();
+        var boxes=document.querySelector('details[data-id="'+S.id+'"]').querySelectorAll('.item');
+        var last=boxes[boxes.length-1];last.scrollIntoView({behavior:'smooth',block:'center'});last.querySelector('input').focus();
+      };
+      b.appendChild(add);d.appendChild(b);wrap.appendChild(d);
+    });
+  }
+
+  function validate(){
+    for(var s=0;s<M.sections.length;s++){var S=M.sections[s];
+      if(!S.title.trim())return 'فيه قسم من غير اسم';
+      for(var i=0;i<S.items.length;i++){var it=S.items[i];
+        if(!String(it.name||'').trim())return 'فيه صنف من غير اسم في "'+S.title+'"';
+        if(it.hidden)continue;
+        if(S.sizes&&S.sizes.length){if(!(it.prices||[]).some(function(p){return p!=null}))return '"'+it.name+'" مالوش سعر';}
+        else if(it.price==null)return '"'+it.name+'" مالوش سعر';
+      }}
+    return '';
+  }
+  $('save').onclick=function(){
+    if(saving)return;var v=validate();if(v){status(v,true);return}
+    saving=true;$('save').disabled=true;status('جاري الحفظ…',false,true);
+    gh(PATH,{method:'PUT',body:JSON.stringify({message:'تحديث المنيو من لوحة التحكم',content:b64enc(JSON.stringify(M,null,1)+'\n'),sha:sha,branch:BRANCH})})
+      .then(function(j){sha=j.content.sha;dirty=false;status('اتحفظ ✓ هيظهر في المنيو خلال دقيقة أو اتنين')})
+      .catch(function(e){$('save').disabled=false;status(explain(e),true)})
+      .then(function(){saving=false});
+  };
+
+  var saved=get(TKEY);if(saved)login(saved);
+})();
+</script>
+</body>
+</html>

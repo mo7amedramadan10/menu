@@ -108,8 +108,8 @@ section{margin-top:38px}
 .list .n{font-weight:600;font-size:1.02rem}
 .list .dots{flex:1;border-bottom:2px dotted rgba(255,194,26,.35);transform:translateY(-4px)}
 @media (min-width:880px){
-  #sandwich,#baladi,#plates,#extras,#drinks{display:inline-block;width:calc(50% - 12px);vertical-align:top;margin-inline-end:20px}
-  #baladi,#extras{margin-inline-end:0}
+  section.half{display:inline-block;width:calc(50% - 12px);vertical-align:top;margin-inline-end:20px}
+  section.half.even{margin-inline-end:0}
 }
 
 footer{text-align:center;padding:26px 16px 30px;color:var(--muted)}
@@ -183,6 +183,10 @@ footer .brand{font-family:var(--display);color:var(--cream);font-size:1.5rem;mar
 .send svg{width:22px;height:22px;fill:currentColor}
 .clear{display:block;margin:12px auto 0;background:none;border:0;color:var(--muted);text-decoration:underline;font:.9rem var(--text);cursor:pointer}
 body.lock{overflow:hidden}
+.loading,.loaderr{text-align:center;color:var(--muted);padding:60px 10px}
+.loaderr a{color:var(--mustard)}
+.feerow{display:flex;justify-content:space-between;color:var(--muted);margin-top:4px}
+
 </style>
 </head>
 <body>
@@ -196,9 +200,9 @@ body.lock{overflow:hidden}
   </div>
 </header>
 
-<nav class="cats" aria-label="أقسام المنيو"><div class="track"><a href="#beef">بيف برجر</a><a href="#chicken">تشيكن برجر</a><a href="#sandwich">سوري وفرنساوي</a><a href="#baladi">عيش بلدي</a><a href="#plates">أطباق بطاطس</a><a href="#extras">إضافات</a><a href="#drinks">مشروبات</a></div></nav>
+<nav class="cats" aria-label="أقسام المنيو"><div class="track"></div></nav>
 
-<main><section id="beef"><div class="head"><h2 class="tape yellow"><span>بيف برجر</span></h2></div><p class="note">كل برجر متاح سنجل أو دبل</p><div class="grid"><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر كلاسيك" loading="lazy" decoding="async"></div><h3>برجر كلاسيك</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">120<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">175<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1610970878459-a0e464d7592b?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1610970878459-a0e464d7592b?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1610970878459-a0e464d7592b?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر هالبينو" loading="lazy" decoding="async"></div><h3>برجر هالبينو</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">140<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">195<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1603064752734-4c48eff53d05?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1603064752734-4c48eff53d05?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر باربيكيو" loading="lazy" decoding="async"></div><h3>برجر باربيكيو</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">125<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">180<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر موتزريلا استيكس" loading="lazy" decoding="async"></div><h3>برجر موتزريلا استيكس</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">140<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">195<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر مكس تشيز" loading="lazy" decoding="async"></div><h3>برجر مكس تشيز</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">150<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">200<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1713330801172-03f8d1c0dde7?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1713330801172-03f8d1c0dde7?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1713330801172-03f8d1c0dde7?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر بيض" loading="lazy" decoding="async"></div><h3>برجر بيض</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">150<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">205<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر أونيون رينج" loading="lazy" decoding="async"></div><h3>برجر أونيون رينج</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">140<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">195<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر تركي" loading="lazy" decoding="async"></div><h3>برجر تركي</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">140<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">195<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر بيج تيستي" loading="lazy" decoding="async"></div><h3>برجر بيج تيستي</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">140<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">195<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1549611016-3a70d82b5040?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1549611016-3a70d82b5040?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1549611016-3a70d82b5040?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر روز بيف" loading="lazy" decoding="async"></div><h3>برجر روز بيف</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">140<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">195<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1667329829058-ac191ba4a905?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1667329829058-ac191ba4a905?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1667329829058-ac191ba4a905?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر رانش" loading="lazy" decoding="async"></div><h3>برجر رانش</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">140<small>ج</small></span></div><div class="opt"><i>دبل</i><span class="p">195<small>ج</small></span></div></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1551782450-17144efb9c50?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1551782450-17144efb9c50?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1551782450-17144efb9c50?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="برجر مكسات" loading="lazy" decoding="async"></div><h3>برجر مكسات</h3><div class="sz"><div class="opt"><i>سنجل</i><span class="p">–</span></div><div class="opt"><i>دبل</i><span class="p">200<small>ج</small></span></div></div></article></div></section><section id="chicken"><div class="head"><h2 class="tape yellow"><span>تشيكن برجر</span></h2></div><div class="grid"><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1637710847214-f91d99669e18?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1637710847214-f91d99669e18?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1637710847214-f91d99669e18?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="تشيكن كلاسيك" loading="lazy" decoding="async"></div><h3>تشيكن كلاسيك</h3><div class="sz one"><span class="p">120<small>ج</small></span></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1692737349870-e3bfc704ebf9?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1692737349870-e3bfc704ebf9?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1692737349870-e3bfc704ebf9?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="تشيكن هالبينو" loading="lazy" decoding="async"></div><h3>تشيكن هالبينو</h3><div class="sz one"><span class="p">140<small>ج</small></span></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1703219342329-fce8488cf443?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1703219342329-fce8488cf443?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1703219342329-fce8488cf443?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="تشيكن باربيكيو" loading="lazy" decoding="async"></div><h3>تشيكن باربيكيو</h3><div class="sz one"><span class="p">125<small>ج</small></span></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1671106571674-a89083d27e60?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1671106571674-a89083d27e60?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1671106571674-a89083d27e60?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="تشيكن موتزريلا استيكس" loading="lazy" decoding="async"></div><h3>تشيكن موتزريلا استيكس</h3><div class="sz one"><span class="p">140<small>ج</small></span></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1692737348416-0a4fa4cf1523?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1692737348416-0a4fa4cf1523?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1692737348416-0a4fa4cf1523?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="تشيكن مكس تشيز" loading="lazy" decoding="async"></div><h3>تشيكن مكس تشيز</h3><div class="sz one"><span class="p">150<small>ج</small></span></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1671522635501-f03491b207e6?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1671522635501-f03491b207e6?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1671522635501-f03491b207e6?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:50% 50%" alt="تشيكن تركي" loading="lazy" decoding="async"></div><h3>تشيكن تركي</h3><div class="sz one"><span class="p">140<small>ج</small></span></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1637710847214-f91d99669e18?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1637710847214-f91d99669e18?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1637710847214-f91d99669e18?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:20% 70%" alt="تشيكن أونيون رينج" loading="lazy" decoding="async"></div><h3>تشيكن أونيون رينج</h3><div class="sz one"><span class="p">140<small>ج</small></span></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1692737349870-e3bfc704ebf9?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1692737349870-e3bfc704ebf9?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1692737349870-e3bfc704ebf9?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:80% 35%" alt="تشيكن روز بيف" loading="lazy" decoding="async"></div><h3>تشيكن روز بيف</h3><div class="sz one"><span class="p">140<small>ج</small></span></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1671106571674-a89083d27e60?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1671106571674-a89083d27e60?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1671106571674-a89083d27e60?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:75% 65%" alt="تشيكن بيج تيستي" loading="lazy" decoding="async"></div><h3>تشيكن بيج تيستي</h3><div class="sz one"><span class="p">140<small>ج</small></span></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1692737348416-0a4fa4cf1523?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1692737348416-0a4fa4cf1523?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1692737348416-0a4fa4cf1523?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:25% 35%" alt="تشيكن رانش" loading="lazy" decoding="async"></div><h3>تشيكن رانش</h3><div class="sz one"><span class="p">140<small>ج</small></span></div></article><article class="card"><div class="ph"><img src="https://images.unsplash.com/photo-1703219342329-fce8488cf443?auto=format&fit=crop&w=480&q=70" srcset="https://images.unsplash.com/photo-1703219342329-fce8488cf443?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1703219342329-fce8488cf443?auto=format&fit=crop&w=800&q=70 800w" sizes="(min-width:880px) 220px, 46vw" style="object-position:85% 50%" alt="تشيكن مكسات" loading="lazy" decoding="async"></div><h3>تشيكن مكسات</h3><div class="sz one"><span class="p">200<small>ج</small></span></div></article></div></section><section id="sandwich"><div class="head"><h2 class="tape red"><span>سندوتشات ميكسات</span></h2></div><img class="banner" src="https://images.unsplash.com/photo-1559054663-e8d23213f55c?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" decoding="async"><p class="note">اختار العيش: سوري أو فرنساوي، نفس السعر</p><ul class="list"><li><span class="n">بطاطس</span><span class="dots"></span><span class="p">45<small>ج</small></span></li><li><span class="n">بطاطس بالجبنة</span><span class="dots"></span><span class="p">55<small>ج</small></span></li><li><span class="n">بطاطس هوت دوج</span><span class="dots"></span><span class="p">65<small>ج</small></span></li><li><span class="n">بطاطس كبدة</span><span class="dots"></span><span class="p">65<small>ج</small></span></li><li><span class="n">بطاطس سجق</span><span class="dots"></span><span class="p">65<small>ج</small></span></li><li><span class="n">بطاطس استربس</span><span class="dots"></span><span class="p">90<small>ج</small></span></li><li><span class="n">بطاطس بانيه</span><span class="dots"></span><span class="p">90<small>ج</small></span></li><li><span class="n">بطاطس كفتة</span><span class="dots"></span><span class="p">90<small>ج</small></span></li><li><span class="n">بطاطس مكسات</span><span class="dots"></span><span class="p">100<small>ج</small></span></li><li><span class="n">بطاطس كوردون بلو</span><span class="dots"></span><span class="p">100<small>ج</small></span></li></ul></section><section id="baladi"><div class="head"><h2 class="tape red"><span>سندوتشات عيش بلدي</span></h2></div><img class="banner" src="https://images.unsplash.com/photo-1598679253544-2c97992403ea?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" decoding="async"><ul class="list"><li><span class="n">بطاطس</span><span class="dots"></span><span class="p">20<small>ج</small></span></li><li><span class="n">بطاطس بالجبنة</span><span class="dots"></span><span class="p">25<small>ج</small></span></li><li><span class="n">بطاطس مكسات</span><span class="dots"></span><span class="p">35<small>ج</small></span></li><li><span class="n">بطاطس هوت دوج</span><span class="dots"></span><span class="p">35<small>ج</small></span></li><li><span class="n">بطاطس كبدة</span><span class="dots"></span><span class="p">35<small>ج</small></span></li><li><span class="n">بطاطس سجق</span><span class="dots"></span><span class="p">35<small>ج</small></span></li><li><span class="n">بطاطس استربس</span><span class="dots"></span><span class="p">45<small>ج</small></span></li><li><span class="n">بطاطس كفتة</span><span class="dots"></span><span class="p">45<small>ج</small></span></li><li><span class="n">بطاطس بانيه</span><span class="dots"></span><span class="p">45<small>ج</small></span></li></ul></section><section id="plates"><div class="head"><h2 class="tape red"><span>أطباق بطاطس ميكسات</span></h2></div><img class="banner" src="https://images.unsplash.com/photo-1639744210631-209fce3e256c?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" decoding="async"><ul class="list"><li><span class="n">بطاطس</span><span class="dots"></span><span class="p">35<small>ج</small></span></li><li><span class="n">بطاطس مكس تشيز</span><span class="dots"></span><span class="p">50<small>ج</small></span></li><li><span class="n">بطاطس كبدة</span><span class="dots"></span><span class="p">75<small>ج</small></span></li><li><span class="n">بطاطس سجق</span><span class="dots"></span><span class="p">75<small>ج</small></span></li><li><span class="n">بطاطس هوت دوج</span><span class="dots"></span><span class="p">75<small>ج</small></span></li><li><span class="n">بطاطس استربس</span><span class="dots"></span><span class="p">90<small>ج</small></span></li><li><span class="n">بطاطس بانيه</span><span class="dots"></span><span class="p">90<small>ج</small></span></li></ul></section><section id="extras"><div class="head"><h2 class="tape red"><span>إضافات</span></h2></div><img class="banner" src="https://images.unsplash.com/photo-1647705195905-671a25be159d?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" decoding="async"><ul class="list"><li><span class="n">صوص رانش</span><span class="dots"></span><span class="p">20<small>ج</small></span></li><li><span class="n">صوص شيدر</span><span class="dots"></span><span class="p">20<small>ج</small></span></li><li><span class="n">صوص بيج تيستي</span><span class="dots"></span><span class="p">20<small>ج</small></span></li><li><span class="n">صوص كوكتيل</span><span class="dots"></span><span class="p">20<small>ج</small></span></li><li><span class="n">صوص باربيكيو</span><span class="dots"></span><span class="p">20<small>ج</small></span></li><li><span class="n">طحينة</span><span class="dots"></span><span class="p">15<small>ج</small></span></li><li><span class="n">حلقات بصل</span><span class="dots"></span><span class="p">20<small>ج</small></span></li><li><span class="n">تركي مدخن</span><span class="dots"></span><span class="p">20<small>ج</small></span></li><li><span class="n">روز بيف</span><span class="dots"></span><span class="p">20<small>ج</small></span></li><li><span class="n">موتزريلا استيكس</span><span class="dots"></span><span class="p">20<small>ج</small></span></li></ul></section><section id="drinks"><div class="head"><h2 class="tape red"><span>مشروبات</span></h2></div><ul class="list"><li><span class="n">مياه صغيرة</span><span class="dots"></span><span class="p">10<small>ج</small></span></li><li><span class="n">مياه كبيرة</span><span class="dots"></span><span class="p">20<small>ج</small></span></li><li><span class="n">مياه غازية</span><span class="dots"></span><span class="p">20<small>ج</small></span></li></ul></section></main>
+<main id="menu"><p class="loading">جاري تحميل المنيو…</p></main>
 
 <div class="zig" aria-hidden="true"></div>
 <footer>
@@ -214,8 +218,9 @@ body.lock{overflow:hidden}
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
   <div class="top"><h2 id="sheetTitle">طلبك</h2><button class="x" type="button" id="closeCart" aria-label="إغلاق">×</button></div>
   <ul class="items" id="items"></ul>
+  <div class="feerow" id="feeRow" hidden><span>التوصيل</span><span id="feeVal"></span></div>
   <div class="total"><span>الإجمالي</span><span class="p" id="total"></span></div>
-  <p class="fee">الأسعار من غير مصاريف التوصيل</p>
+  <p class="fee" id="feeNote">الأسعار من غير مصاريف التوصيل</p>
   <form class="form" id="orderForm" novalidate>
     <label for="cName">الاسم</label><input id="cName" autocomplete="name" required>
     <label for="cPhone">رقم الموبايل</label><input id="cPhone" type="tel" inputmode="tel" dir="ltr" autocomplete="tel" placeholder="01xxxxxxxxx" required>
@@ -227,158 +232,6 @@ body.lock{overflow:hidden}
   <button class="clear" type="button" id="clearCart">امسح الطلب</button>
 </div>
 
-<script>
-(function(){
-  var links=[].slice.call(document.querySelectorAll('nav.cats a'));
-  var track=document.querySelector('nav.cats .track');
-  function setActive(id){
-    links.forEach(function(a){
-      var on=a.getAttribute('href')==='#'+id;
-      a.classList.toggle('on',on);
-      if(on){var r=a.getBoundingClientRect(),t=track.getBoundingClientRect();
-        if(r.left<t.left||r.right>t.right){track.scrollBy({left:(r.left+r.width/2)-(t.left+t.width/2),behavior:'smooth'})}}
-    });
-  }
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){if(e.isIntersecting)setActive(e.target.id)});
-    },{rootMargin:'-30% 0px -60% 0px'});
-    document.querySelectorAll('main section').forEach(function(s){io.observe(s)});
-  }
-  if(links[0])links[0].classList.add('on');
-})();
-</script>
-<script>
-(function(){
-  var WA='201109270440', KEY='mixat-cart', CKEY='mixat-customer';
-  function load(k,d){try{var v=JSON.parse(localStorage.getItem(k));return v||d}catch(e){return d}}
-  function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
-  var cart=load(KEY,[]);
-  var targets={};
-  function price(el){var n=parseInt((el.textContent||'').replace(/[^\d]/g,''),10);return isNaN(n)?0:n}
-  function secTitle(s){var t=s.querySelector('.tape span');return t?t.textContent.trim():''}
-
-  function makeTarget(el,item){
-    targets[item.key]=targets[item.key]||[];targets[item.key].push(el);
-    el.dataset.key=item.key;
-    function go(e){if(e.type==='keydown'&&e.key!=='Enter'&&e.key!==' ')return;e.preventDefault();add(typeof item.get==='function'?item.get():item)}
-    el.addEventListener('click',go);
-    if(el.tagName!=='BUTTON'){el.setAttribute('role','button');el.tabIndex=0;el.addEventListener('keydown',go)}
-  }
-
-  // burger cards
-  document.querySelectorAll('.card').forEach(function(card){
-    var name=card.querySelector('h3').textContent.trim();
-    var one=card.querySelector('.sz.one');
-    if(one){var p=price(one);makeTarget(one,{key:name,name:name,price:p});one.setAttribute('aria-label','أضف '+name);return}
-    card.querySelectorAll('.sz .opt').forEach(function(opt){
-      var size=opt.querySelector('i').textContent.trim(),p=price(opt.querySelector('.p'));
-      if(!p){opt.setAttribute('aria-disabled','true');return}
-      var n=name+' ('+size+')';makeTarget(opt,{key:n,name:n,price:p});opt.setAttribute('aria-label','أضف '+n);
-    });
-  });
-
-  // price lists
-  var prefix={sandwich:'سندوتش',baladi:'سندوتش عيش بلدي',plates:'طبق',extras:'',drinks:''};
-  var bread='سوري';
-  var sw=document.querySelector('#sandwich .note');
-  if(sw){
-    var bx=document.createElement('div');bx.className='bread';bx.setAttribute('role','group');bx.setAttribute('aria-label','نوع العيش');
-    ['سوري','فرنساوي'].forEach(function(b){
-      var btn=document.createElement('button');btn.type='button';btn.textContent=b;btn.setAttribute('aria-pressed',b===bread);
-      btn.onclick=function(){bread=b;bx.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===btn)});badges()};
-      bx.appendChild(btn);
-    });
-    sw.textContent='اختار العيش قبل ما تضيف: سوري أو فرنساوي، نفس السعر';
-    sw.after(bx);
-  }
-  document.querySelectorAll('.list').forEach(function(ul){
-    var sec=ul.closest('section'),id=sec.id;
-    ul.querySelectorAll('li').forEach(function(li){
-      var nm=li.querySelector('.n').textContent.trim(),p=price(li.querySelector('.p'));
-      var b=document.createElement('button');b.type='button';b.className='addbtn';b.textContent='+';b.setAttribute('aria-label','أضف '+nm);
-      li.appendChild(b);
-      if(id==='sandwich'){
-        ['سوري','فرنساوي'].forEach(function(br){targets['سندوتش '+br+' - '+nm]=targets['سندوتش '+br+' - '+nm]||[]});
-        b.dataset.sw=nm;
-        b.addEventListener('click',function(){var n='سندوتش '+bread+' - '+nm;add({key:n,name:n,price:p})});
-      }else{
-        var n=prefix[id]?prefix[id]+' - '+nm:nm;makeTarget(b,{key:n,name:n,price:p});
-      }
-    });
-  });
-
-  var bar=document.getElementById('orderbar'),toast=document.getElementById('toast'),tt;
-  function show(msg){toast.textContent=msg;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},1600)}
-  function find(k){for(var i=0;i<cart.length;i++)if(cart[i].key===k)return cart[i]}
-  function add(it){var c=find(it.key);if(c)c.qty++;else cart.push({key:it.key,name:it.name,price:it.price,qty:1});changed();show('✓ اتضاف: '+it.name)}
-  function setQty(k,d){var c=find(k);if(!c)return;c.qty+=d;if(c.qty<=0)cart=cart.filter(function(x){return x!==c});changed()}
-  function total(){return cart.reduce(function(s,c){return s+c.price*c.qty},0)}
-  function count(){return cart.reduce(function(s,c){return s+c.qty},0)}
-
-  function badge(el,q){var b=el.querySelector('.qb');if(q){if(!b){b=document.createElement('span');b.className='qb';el.appendChild(b)}b.textContent=q}else if(b)b.remove()}
-  function badges(){
-    Object.keys(targets).forEach(function(k){var c=find(k);targets[k].forEach(function(el){badge(el,c?c.qty:0)})});
-    document.querySelectorAll('[data-sw]').forEach(function(b){var c=find('سندوتش '+bread+' - '+b.dataset.sw);badge(b,c?c.qty:0)});
-  }
-  function changed(){
-    save(KEY,cart);badges();
-    var n=count();bar.classList.toggle('has',n>0);
-    document.getElementById('cartCount').textContent=n;
-    document.getElementById('cartSum').textContent=total()+' ج';
-    renderItems();
-    if(!n&&sheet.classList.contains('on'))closeSheet();
-  }
-
-  var sheet=document.getElementById('sheet'),bg=document.getElementById('sheetBg'),items=document.getElementById('items');
-  function renderItems(){
-    items.innerHTML='';
-    cart.forEach(function(c){
-      var li=document.createElement('li');
-      var nm=document.createElement('div');nm.className='nm';nm.textContent=c.name;
-      var sm=document.createElement('small');sm.textContent=c.price+' ج';nm.appendChild(sm);
-      var q=document.createElement('div');q.className='qty';
-      var minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','قلّل');minus.onclick=function(){setQty(c.key,-1)};
-      var s=document.createElement('span');s.textContent=c.qty;
-      var plus=document.createElement('button');plus.type='button';plus.textContent='+';plus.setAttribute('aria-label','زوّد');plus.onclick=function(){setQty(c.key,1)};
-      q.append(plus,s,minus);
-      var lt=document.createElement('span');lt.className='p lt';lt.textContent=(c.price*c.qty)+' ج';
-      li.append(nm,q,lt);items.appendChild(li);
-    });
-    document.getElementById('total').textContent=total()+' ج';
-  }
-  var lastFocus;
-  function openSheet(){lastFocus=document.activeElement;sheet.hidden=false;requestAnimationFrame(function(){sheet.classList.add('on');bg.classList.add('on')});document.body.classList.add('lock');document.getElementById('closeCart').focus()}
-  function closeSheet(){sheet.classList.remove('on');bg.classList.remove('on');document.body.classList.remove('lock');setTimeout(function(){if(!sheet.classList.contains('on'))sheet.hidden=true},300);if(lastFocus)lastFocus.focus()}
-  document.getElementById('openCart').onclick=openSheet;
-  document.getElementById('closeCart').onclick=closeSheet;
-  bg.onclick=closeSheet;
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&sheet.classList.contains('on'))closeSheet()});
-  document.getElementById('clearCart').onclick=function(){if(confirm('تمسح كل الطلب؟')){cart=[];changed()}};
-
-  var f={name:document.getElementById('cName'),phone:document.getElementById('cPhone'),addr:document.getElementById('cAddr'),note:document.getElementById('cNote')};
-  var cu=load(CKEY,{});f.name.value=cu.name||'';f.phone.value=cu.phone||'';f.addr.value=cu.addr||'';
-  document.getElementById('orderForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    var err=document.getElementById('err'),bad=[];
-    var ph=f.phone.value.replace(/[٠-٩]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'.indexOf(d)}).replace(/[^\d]/g,'');
-    Object.keys(f).forEach(function(k){f[k].classList.remove('bad')});
-    if(!f.name.value.trim())bad.push(f.name);
-    if(!/^01\d{9}$/.test(ph))bad.push(f.phone);
-    if(!f.addr.value.trim())bad.push(f.addr);
-    if(!cart.length){err.textContent='الطلب فاضي';return}
-    if(bad.length){bad.forEach(function(x){x.classList.add('bad')});err.textContent=bad.indexOf(f.phone)>-1&&bad.length===1?'اكتب رقم موبايل صحيح (11 رقم يبدأ بـ 01)':'من فضلك كمّل البيانات المطلوبة';bad[0].focus();return}
-    err.textContent='';
-    save(CKEY,{name:f.name.value.trim(),phone:ph,addr:f.addr.value.trim()});
-    var L=['🍔 *طلب جديد - ميكسات*','━━━━━━━━━━'];
-    cart.forEach(function(c){L.push(c.qty+' × '+c.name+' = '+(c.price*c.qty)+' ج')});
-    L.push('━━━━━━━━━━','*الإجمالي: '+total()+' ج* (من غير التوصيل)','','👤 الاسم: '+f.name.value.trim(),'📞 الموبايل: '+ph,'📍 العنوان: '+f.addr.value.trim());
-    if(f.note.value.trim())L.push('📝 ملاحظات: '+f.note.value.trim());
-    window.location.href='https://wa.me/'+WA+'?text='+encodeURIComponent(L.join('\n'));
-  });
-
-  changed();
-})();
-</script>
+<script src="app.js"></script>
 </body>
 </html>
