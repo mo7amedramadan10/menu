@@ -2,164 +2,235 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#24150d">
 <meta name="color-scheme" content="dark">
 <title>ميكسات | لوحة التحكم</title>
+<link rel="icon" href="logo.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="menu.css">
 <style>
-:root{
-  --wood:#24150d; --board:#33200f; --board-2:#3d2716;
-  --flame:#e3262d; --mustard:#ffc21a; --green:#25d366;
-  --cream:#fff3df; --muted:#c7ab8d; --line:rgba(255,243,223,.14);
-  --display:"Lalezar","Arial Black",system-ui,sans-serif;
-  --text:"IBM Plex Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;
-}
-*,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--wood);color:var(--cream);font:16px/1.5 var(--text)}
-header{position:sticky;top:0;z-index:5;background:rgba(30,17,10,.96);border-bottom:1px solid rgba(238,122,42,.35);
-  display:flex;align-items:center;gap:10px;padding:10px 16px;flex-wrap:wrap}
-header h1{font:400 1.5rem var(--display);color:var(--mustard);margin:0;flex:1}
-header a{color:var(--muted);font-size:.9rem}
-main{max-width:760px;margin:0 auto;padding:16px 16px 120px}
-.box{background:linear-gradient(180deg,var(--board-2),var(--board));border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:14px}
-.box h2{font:400 1.35rem var(--display);margin:0 0 8px;color:var(--mustard)}
-label{display:block;font-size:.88rem;color:var(--muted);margin:10px 0 4px}
-input[type=text],input[type=number],input[type=password],input[type=url],input[type=tel]{width:100%;background:rgba(0,0,0,.35);border:1.5px solid var(--line);
-  border-radius:10px;color:var(--cream);font:1rem var(--text);padding:9px 11px}
-input:focus{outline:none;border-color:var(--mustard)}
-input[type=number]{direction:ltr;text-align:center}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-button{font:600 .95rem var(--text);cursor:pointer;border-radius:999px;border:0;padding:9px 18px}
-.pri{background:var(--mustard);color:#2a1606}
-.ghost{background:rgba(255,255,255,.08);color:var(--cream)}
-.danger{background:none;color:#ff8a8a}
-.help{color:var(--muted);font-size:.9rem;line-height:1.8}
-.help ol{padding-inline-start:20px;margin:6px 0}
-.help a{color:var(--mustard)}
-.help code{background:rgba(0,0,0,.35);padding:1px 6px;border-radius:6px}
-details.sec{background:linear-gradient(180deg,var(--board-2),var(--board));border:1px solid var(--line);border-radius:16px;margin-bottom:12px}
-details.sec>summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px}
-details.sec>summary::-webkit-details-marker{display:none}
-details.sec>summary .t{font:400 1.3rem var(--display);flex:1}
-details.sec>summary .c{color:var(--muted);font-size:.85rem}
-details.sec>summary::after{content:"▾";color:var(--mustard);transition:transform .2s}
-details.sec[open]>summary::after{transform:rotate(180deg)}
-.secbody{padding:0 16px 16px}
-.item{border-top:1px dashed var(--line);padding:12px 0;display:grid;gap:8px}
-.item.off{opacity:.55}
-.item .top{display:flex;gap:8px;align-items:center}
-.item .top input[type=text]{flex:1}
-.prices{display:flex;gap:8px;flex-wrap:wrap}
-.prices label{margin:0;display:flex;align-items:center;gap:6px;flex:1;min-width:120px}
-.prices input{flex:1;min-width:70px}
-.tools{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.tools button{padding:6px 12px;font-size:.85rem}
-.sw{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-size:.9rem;margin-inline-end:auto}
-.sw input{width:40px;height:22px;appearance:none;background:#6b5a4a;border-radius:999px;position:relative;cursor:pointer;margin:0;transition:.2s}
-.sw input::after{content:"";position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:.2s}
-.sw input:checked{background:var(--green)}
-.sw input:checked::after{right:21px}
-.imgrow{display:flex;gap:10px;align-items:center}
-.imgrow img{width:64px;height:64px;object-fit:cover;border-radius:10px;background:#2a1a10;flex:none}
-.imgrow .col{flex:1;display:grid;gap:6px;min-width:0}
-.imgrow .col .tools button{font-size:.8rem}
-.add{width:100%;margin-top:10px;border:1.5px dashed var(--mustard);background:none;color:var(--mustard);border-radius:12px}
-.savebar{position:fixed;inset-inline:0;bottom:0;z-index:6;padding:12px 16px;background:linear-gradient(180deg,transparent,rgba(20,11,6,.97) 35%);
-  display:flex;justify-content:center;gap:10px;align-items:center}
-.savebar button{font:400 1.25rem var(--display);padding:11px 34px 8px;background:var(--green);color:#fff;box-shadow:0 3px 0 #178a42}
-.savebar button:disabled{background:#6b5a4a;box-shadow:none;cursor:default}
-.status{position:fixed;top:64px;left:50%;transform:translateX(-50%);z-index:9;background:#150b05;border:1px solid var(--mustard);
-  padding:9px 16px;border-radius:12px;max-width:92vw;display:none;text-align:center}
-.status.on{display:block}
-.status.err{border-color:var(--flame);color:#ffb3b3}
-.chk{display:flex;align-items:center;gap:8px;color:var(--cream);margin-top:12px;cursor:pointer}
+/* admin layer on top of the menu design */
+.hero.sm{min-height:0}
+.hero.sm .hero-in{padding:28px 16px 18px}
+.hero.sm .logo{width:min(110px,30vw);height:auto}
+.hero.sm .tag{margin:4px 0 0;font-size:1.35rem}
+.hero .who{color:var(--muted);font-size:.9rem;margin:4px 0 0;min-height:1.4em}
+
+/* auth */
+.auth{max-width:440px;margin:0 auto;padding:6px 16px 40px}
+.panel{background:linear-gradient(180deg,var(--board-2),var(--board));border:1px solid rgba(255,243,223,.1);border-radius:18px;padding:22px 18px 20px}
+.panel .tape{margin:-6px 0 14px}
+.fld{display:block;margin:0 0 12px}
+.fld span{display:block;color:var(--muted);font-size:.9rem;margin-bottom:5px}
+.fld input{width:100%;background:rgba(0,0,0,.35);border:1.5px solid rgba(255,243,223,.2);border-radius:12px;color:var(--cream);font:1rem var(--text);padding:11px 12px}
+.fld input:focus{outline:none;border-color:var(--mustard)}
+.big{display:flex;width:100%;justify-content:center;border:0;cursor:pointer;background:var(--flame);color:#fff;font:400 1.3rem var(--display);
+  padding:12px 16px 9px;border-radius:999px;box-shadow:0 3px 0 #8f1318;margin-top:6px}
+.big:active{transform:translateY(2px);box-shadow:0 1px 0 #8f1318}
+.big:disabled{opacity:.6}
+.chk{display:flex;align-items:center;gap:8px;margin:2px 0 12px;cursor:pointer;font-size:.95rem}
 .chk input{width:18px;height:18px;accent-color:var(--mustard)}
-.linkbtn{background:none;color:var(--mustard);text-decoration:underline;padding:4px 6px;font-weight:400}
+.link{background:none;border:0;color:var(--mustard);text-decoration:underline;font:inherit;cursor:pointer;padding:0}
+.muted{color:var(--muted);font-size:.9rem;line-height:1.8}
+.steps{background:rgba(0,0,0,.25);border-radius:12px;padding:10px 14px;margin:0 0 14px}
+.steps summary{cursor:pointer;color:var(--mustard);font-weight:600}
+.steps ol{margin:8px 0 2px;padding-inline-start:20px;color:var(--muted);font-size:.9rem;line-height:1.9}
+.steps a{color:var(--mustard)}
+.steps b{color:var(--cream)}
+.warn{background:rgba(227,38,45,.15);border:1px solid rgba(227,38,45,.5);border-radius:12px;padding:8px 12px;font-size:.9rem}
+
+/* editing hint */
+.hint{max-width:980px;margin:12px auto 0;padding:0 14px}
+.hint p{margin:0;background:rgba(255,194,26,.1);border:1px dashed rgba(255,194,26,.5);border-radius:12px;padding:8px 12px;font-size:.92rem;text-align:center}
+
+/* inline editable text: looks like the menu, with a dashed underline */
+.ei{background:transparent;border:0;border-bottom:1.5px dashed rgba(255,194,26,.45);color:inherit;font:inherit;line-height:inherit;
+  width:100%;padding:1px 2px;border-radius:0;text-align:inherit;min-width:0}
+.ei:focus{outline:none;border-bottom:1.5px solid var(--mustard);background:rgba(255,194,26,.1);border-radius:6px 6px 0 0}
+.ei::placeholder{color:rgba(255,243,223,.35)}
+.tape span .ei{border-bottom-color:rgba(0,0,0,.35);width:auto;field-sizing:content;min-width:4ch;max-width:70vw}
+.tape.red span .ei{border-bottom-color:rgba(255,255,255,.5)}
+.tape.yellow span .ei::placeholder{color:rgba(42,22,6,.45)}
+.note .ei{font-size:.93rem;color:var(--muted)}
+.card h3 .ei{font-family:var(--display);font-size:1.12rem}
+.pi{font-family:var(--display);font-size:1.3rem;color:var(--mustard);text-align:center;direction:ltr;width:100%}
+.pi::placeholder{font-size:.8rem;color:rgba(255,243,223,.4);font-family:var(--text)}
+.opt .pi{border-bottom-color:rgba(255,194,26,.3)}
+.sz.one{padding:4px 8px}
+.sz .opt::after,.sz.one::after{display:none}
+.sz .opt,.sz.one{cursor:default;border-color:transparent}
+.list .n{flex:1;min-width:0}
+.list .dots{flex:0 0 14px}
+.list .pw{flex:none;width:64px}
+
+/* card/item controls */
+.card{position:relative}
+.more{position:absolute;top:14px;inset-inline-start:14px;z-index:2;width:34px;height:34px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(20,11,6,.78);color:var(--cream);font:700 18px/34px var(--text);padding:0;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.list .more{position:static;flex:none;width:30px;height:30px;line-height:30px;background:rgba(255,255,255,.08)}
+.ph{position:relative}
+.chg{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);border:0;cursor:pointer;white-space:nowrap;
+  background:rgba(20,11,6,.82);color:var(--cream);font:600 .8rem var(--text);padding:5px 12px;border-radius:999px}
+.ph .noimg{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:2rem}
+.off{opacity:.45}
+.card.off::after,.list li.off .n::after{content:"مخفي";font:600 .72rem var(--text);background:#6b5a4a;color:#fff;padding:2px 8px;border-radius:999px}
+.card.off::after{position:absolute;top:18px;inset-inline-end:16px}
+.list li.off .n{display:flex;align-items:center;gap:6px}
+.bannerwrap{position:relative}
+.addimg{display:block;margin:0 0 12px;border:1.5px dashed rgba(255,243,223,.25);background:none;color:var(--muted);border-radius:12px;
+  padding:8px 14px;cursor:pointer;font:.9rem var(--text)}
+.addcard{border:2px dashed rgba(255,194,26,.55);background:rgba(255,194,26,.04);border-radius:16px;color:var(--mustard);cursor:pointer;
+  font:400 1.25rem var(--display);min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.addcard b{font-size:2.4rem;line-height:1}
+.addrow{width:100%;border:0;background:none;color:var(--mustard);cursor:pointer;font:400 1.15rem var(--display);padding:12px 0 8px}
+.flash{animation:flash 1.2s ease}
+@keyframes flash{0%,40%{box-shadow:0 0 0 3px var(--mustard)}100%{box-shadow:0 0 0 0 transparent}}
+
+/* bottom bar */
+.adminbar{position:fixed;inset-inline:0;bottom:0;z-index:20;display:flex;justify-content:center;align-items:center;gap:10px;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,transparent,rgba(20,11,6,.96) 40%)}
+.round{width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:var(--board-2);color:var(--cream);font-size:1.3rem;
+  box-shadow:0 3px 0 rgba(0,0,0,.45);display:grid;place-items:center;text-decoration:none;flex:none}
+.savebtn{border:0;cursor:pointer;background:#25d366;color:#fff;font:400 1.25rem var(--display);padding:11px 26px 8px;border-radius:999px;
+  box-shadow:0 3px 0 #178a42;display:inline-flex;align-items:center;gap:10px}
+.savebtn b{background:#fff;color:#178a42;border-radius:999px;min-width:24px;height:24px;display:inline-grid;place-items:center;font:700 .85rem var(--text);padding:0 6px}
+.savebtn:disabled{background:#4a3a2c;color:var(--muted);box-shadow:none;cursor:default}
+.savebtn:disabled b{display:none}
+
+/* sheets (reuse the cart sheet look) */
+.acts{display:grid;gap:8px;margin-top:6px}
+.acts button{border:0;cursor:pointer;text-align:start;background:rgba(255,255,255,.06);color:var(--cream);font:600 1rem var(--text);
+  padding:13px 14px;border-radius:12px;display:flex;align-items:center;gap:12px}
+.acts button i{font-style:normal;width:24px;text-align:center}
+.acts button.del{color:#ff9a9a}
+.acts button:disabled{opacity:.35;cursor:default}
+.sheet .sub{color:var(--muted);margin:6px 0 10px;font-size:.88rem}
+.sheet h3{font:400 1.25rem var(--display);color:var(--mustard);margin:20px 0 6px}
 .users{list-style:none;margin:0 0 6px;padding:0}
-.users li{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);direction:ltr}
-.users li span{font-weight:600}
+.users li{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px dashed rgba(255,243,223,.12)}
+.users li>span{font-weight:600}
+.users li .me{color:var(--muted);font-weight:400;font-size:.85rem;margin-inline-start:6px}
+.smallbtn{border:0;cursor:pointer;background:rgba(255,255,255,.08);color:var(--cream);font:600 .88rem var(--text);padding:8px 16px;border-radius:999px}
+.smallbtn.del{background:none;color:#ff9a9a;padding-inline:4px}
+.smallbtn:disabled{opacity:.35;cursor:default}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.toast.err{border-color:var(--flame);color:#ffb3b3;white-space:normal;text-align:center;border-radius:14px}
 [hidden]{display:none!important}
 </style>
 </head>
 <body>
-<header><h1>لوحة تحكم ميكسات</h1><a href="./" target="_blank">فتح المنيو ↗</a><button class="ghost" id="logout" type="button" hidden>خروج</button></header>
-<div class="status" id="status" role="status" aria-live="polite"></div>
 
-<main>
-  <section class="box" id="login" hidden>
-    <h2>تسجيل الدخول</h2>
-    <form id="loginForm" novalidate>
-      <label for="lu">اسم المستخدم</label><input type="text" id="lu" dir="ltr" autocomplete="username" autocapitalize="off" spellcheck="false">
-      <label for="lp">كلمة السر</label><input type="password" id="lp" dir="ltr" autocomplete="current-password">
-      <label class="chk"><input type="checkbox" id="remember" checked> افتكرني على الجهاز ده</label>
-      <p style="margin:12px 0 0"><button class="pri" type="submit" id="loginBtn">دخول</button></p>
-    </form>
-    <p class="help" style="margin-top:18px">أول مرة تفتح لوحة التحكم، أو المفتاح انتهت صلاحيته؟ <button class="linkbtn" type="button" id="toSetup">إعداد الحساب</button></p>
-  </section>
-
-  <section class="box" id="setup" hidden>
-    <h2>إعداد لوحة التحكم</h2>
-    <p class="help">الخطوة دي بيعملها صاحب الحساب <b>مرة واحدة</b> (أو لما المفتاح تنتهي صلاحيته). بعدها الدخول بيبقى باسم المستخدم وكلمة السر بس، من أي جهاز.</p>
-    <p class="help"><b>1) اعمل مفتاح (Token) من GitHub:</b></p>
-    <div class="help"><ol>
-      <li>افتح <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">صفحة إنشاء Token</a>.</li>
-      <li>في <b>Token name</b> اكتب <code>menu admin</code>، وفي <b>Expiration</b> اختار أطول مدة متاحة.</li>
-      <li>في <b>Resource owner</b> اختار <code>mixateg</code>.</li>
-      <li>في <b>Repository access</b> اختار <b>Only select repositories</b> ثم <code>menu</code>.</li>
-      <li>في <b>Permissions</b> ← <b>Repository permissions</b> ← <b>Contents</b> اختار <b>Read and write</b>.</li>
-      <li>دوس <b>Generate token</b>، انسخه، والصقه هنا.</li>
-    </ol></div>
-    <label for="tok">الـ Token</label>
-    <input type="password" id="tok" dir="ltr" autocomplete="off" placeholder="github_pat_...">
-    <p class="help" style="margin-top:14px"><b>2) اختار اسم مستخدم وكلمة سر للدخول:</b></p>
-    <div class="row2">
-      <div><label for="su">اسم المستخدم</label><input type="text" id="su" dir="ltr" autocomplete="username" autocapitalize="off" spellcheck="false"></div>
-      <div><label for="sp">كلمة السر (10 حروف/أرقام على الأقل)</label><input type="password" id="sp" dir="ltr" autocomplete="new-password"></div>
-    </div>
-    <label for="sp2">اكتب كلمة السر تاني</label><input type="password" id="sp2" dir="ltr" autocomplete="new-password">
-    <p style="margin:14px 0 0"><button class="pri" id="setupBtn" type="button">حفظ وإنشاء الحساب</button> <button class="linkbtn" type="button" id="toLogin">رجوع للدخول</button></p>
-    <p class="help" id="resetWarn" hidden>⚠️ فيه حسابات موجودة بالفعل. الإعداد من جديد هيمسحها ويعمل الحساب ده بس (تقدر تضيف الباقيين تاني من جوه).</p>
-  </section>
-
-  <div id="editor" hidden>
-    <section class="box">
-      <h2>إعدادات عامة</h2>
-      <div class="row2">
-        <div><label for="fee">مصاريف التوصيل (ج) — 0 يعني مش محسوبة</label><input type="number" id="fee" min="0" inputmode="numeric"></div>
-        <div><label for="wa">رقم واتساب استلام الطلبات</label><input type="tel" id="wa" dir="ltr"></div>
-      </div>
-    </section>
-    <div id="sections"></div>
-    <section class="box" id="usersBox">
-      <h2>حسابات الأدمن</h2>
-      <ul class="users" id="users"></ul>
-      <p class="help">إضافة حساب جديد، أو تغيير كلمة سر حساب موجود (اكتب نفس الاسم بكلمة سر جديدة):</p>
-      <div class="row2">
-        <div><label for="nu">اسم المستخدم</label><input type="text" id="nu" dir="ltr" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
-        <div><label for="np">كلمة السر (10 على الأقل)</label><input type="password" id="np" dir="ltr" autocomplete="new-password"></div>
-      </div>
-      <p style="margin:12px 0 0"><button class="pri" id="addUser" type="button">حفظ الحساب</button></p>
-    </section>
+<header class="hero sm">
+  <div class="hero-photo" style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1400&q=70')"></div>
+  <div class="hero-in">
+    <img class="logo" src="logo.webp" alt="ميكسات MIXAT" width="300" height="329">
+    <p class="tag">لوحة التحكم</p>
+    <p class="who" id="who"></p>
   </div>
-</main>
+</header>
 
-<div class="savebar" id="savebar" hidden><button id="save" type="button" disabled>حفظ التعديلات</button></div>
+<!-- ============ login / setup ============ -->
+<div class="auth" id="auth">
+  <p class="muted" id="loading" style="text-align:center">جاري التحميل…</p>
+
+  <section class="panel" id="login" hidden>
+    <h2 class="tape yellow"><span>تسجيل الدخول</span></h2>
+    <form id="loginForm" novalidate>
+      <label class="fld"><span>اسم المستخدم</span><input id="lu" dir="ltr" autocomplete="username" autocapitalize="off" spellcheck="false"></label>
+      <label class="fld"><span>كلمة السر</span><input type="password" id="lp" dir="ltr" autocomplete="current-password"></label>
+      <label class="chk"><input type="checkbox" id="remember" checked> افتكرني على الجهاز ده</label>
+      <button class="big" type="submit" id="loginBtn">دخول</button>
+    </form>
+    <p class="muted" style="margin:16px 0 0;text-align:center">أول مرة، أو مفتاح GitHub انتهى؟ <button class="link" type="button" id="toSetup">إعداد الحساب</button></p>
+  </section>
+
+  <section class="panel" id="setup" hidden>
+    <h2 class="tape red"><span>إعداد الحساب</span></h2>
+    <p class="muted" style="margin-top:0">مرة واحدة بس. بعدها الدخول باسم المستخدم وكلمة السر من أي جهاز.</p>
+    <details class="steps">
+      <summary>إزاي أجيب مفتاح GitHub؟</summary>
+      <ol>
+        <li>افتح <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">الصفحة دي</a>.</li>
+        <li><b>Token name:</b> menu admin — <b>Expiration:</b> أطول مدة.</li>
+        <li><b>Resource owner:</b> mixateg</li>
+        <li><b>Repository access:</b> Only select repositories ← menu</li>
+        <li><b>Permissions ← Contents:</b> Read and write</li>
+        <li>دوس <b>Generate token</b> وانسخه.</li>
+      </ol>
+    </details>
+    <label class="fld"><span>مفتاح GitHub</span><input type="password" id="tok" dir="ltr" autocomplete="off" placeholder="github_pat_..."></label>
+    <label class="fld"><span>اسم مستخدم (إنجليزي)</span><input id="su" dir="ltr" autocomplete="username" autocapitalize="off" spellcheck="false"></label>
+    <div class="row2">
+      <label class="fld"><span>كلمة السر (10+)</span><input type="password" id="sp" dir="ltr" autocomplete="new-password"></label>
+      <label class="fld"><span>تأكيدها</span><input type="password" id="sp2" dir="ltr" autocomplete="new-password"></label>
+    </div>
+    <p class="warn" id="resetWarn" hidden>فيه حسابات موجودة. الإعداد من جديد هيمسحها ويعمل الحساب ده بس.</p>
+    <button class="big" type="button" id="setupBtn">حفظ وإنشاء الحساب</button>
+    <p class="muted" style="margin:14px 0 0;text-align:center"><button class="link" type="button" id="toLogin">رجوع للدخول</button></p>
+  </section>
+</div>
+
+<!-- ============ editor ============ -->
+<div id="app" hidden>
+  <nav class="cats" aria-label="أقسام المنيو"><div class="track" id="track"></div></nav>
+  <div class="hint"><p>✏️ اضغط على أي اسم أو سعر وعدّله مكانه — و <b>⋯</b> للإخفاء أو الترتيب أو المسح</p></div>
+  <main id="menu"></main>
+</div>
+
+<div class="adminbar" id="adminbar" hidden>
+  <button class="round" type="button" id="openSettings" aria-label="الإعدادات">⚙️</button>
+  <button class="savebtn" type="button" id="save" disabled>حفظ التعديلات <b id="dirtyN"></b></button>
+  <a class="round" href="./" target="_blank" rel="noopener" aria-label="فتح المنيو">👁️</a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="sheet-bg" id="sheetBg"></div>
+
+<div class="sheet" id="actSheet" role="dialog" aria-modal="true" aria-labelledby="actTitle" hidden>
+  <div class="top"><h2 id="actTitle"></h2><button class="x" type="button" data-close aria-label="إغلاق">×</button></div>
+  <div class="acts" id="acts"></div>
+</div>
+
+<div class="sheet" id="setSheet" role="dialog" aria-modal="true" aria-labelledby="setTitle" hidden>
+  <div class="top"><h2 id="setTitle">الإعدادات</h2><button class="x" type="button" data-close aria-label="إغلاق">×</button></div>
+  <div class="form">
+    <label for="fee">مصاريف التوصيل (ج)</label><input id="fee" type="text" inputmode="numeric" dir="ltr">
+    <p class="sub">0 = مش محسوبة، وهيتكتب للعميل إن الأسعار من غير التوصيل.</p>
+    <label for="wa">رقم واتساب استلام الطلبات</label><input id="wa" type="tel" dir="ltr">
+    <p class="sub">التعديلات دي بتتحفظ مع زرار "حفظ التعديلات".</p>
+  </div>
+  <h3>حسابات الأدمن</h3>
+  <ul class="users" id="users"></ul>
+  <p class="sub">إضافة حساب، أو تغيير كلمة سر (اكتب نفس الاسم بكلمة سر جديدة):</p>
+  <div class="form row2">
+    <div><label for="nu">اسم المستخدم</label><input id="nu" dir="ltr" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+    <div><label for="np">كلمة السر (10+)</label><input id="np" type="password" dir="ltr" autocomplete="new-password"></div>
+  </div>
+  <p style="margin:12px 0 0"><button class="smallbtn" type="button" id="addUser">حفظ الحساب</button></p>
+  <h3>الخروج</h3>
+  <button class="smallbtn del" type="button" id="logout">تسجيل خروج من الجهاز ده</button>
+</div>
+
 <input type="file" id="filePick" accept="image/*" hidden>
 
 <script>
 (function(){
-  var OWNER='mixateg', REPO='menu', BRANCH='main', PATH='menu.json', TKEY='mixat-admin-token';
+  var OWNER='mixateg', REPO='menu', BRANCH='main', PATH='menu.json', USERS='admins.json', TKEY='mixat-admin-token', UKEY='mixat-admin-user';
   var API='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/';
-  var token='', sha='', M=null, dirty=false, saving=false;
+  var token='', sha='', M=null, dirty=0, saving=false, users=[], usersSha='', me='';
   var $=function(id){return document.getElementById(id)};
   function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
   function get(k){try{return localStorage.getItem(k)||''}catch(e){return ''}}
   function set(k,v){try{v?localStorage.setItem(k,v):localStorage.removeItem(k)}catch(e){}}
-  var st=$('status'),stT;
-  function status(msg,err,stay){st.textContent=msg;st.className='status on'+(err?' err':'');clearTimeout(stT);if(!stay)stT=setTimeout(function(){st.className='status'},err?7000:3500)}
+  function sget(k){try{return sessionStorage.getItem(k)||''}catch(e){return ''}}
+  function sset(k,v){try{v?sessionStorage.setItem(k,v):sessionStorage.removeItem(k)}catch(e){}}
+
+  var toast=$('toast'),tt;
+  function say(msg,err,stay){toast.textContent=msg;toast.className='toast on'+(err?' err':'');clearTimeout(tt);if(!stay)tt=setTimeout(function(){toast.className='toast'+(err?' err':'')},err?6500:2600)}
   function b64enc(s){return btoa(unescape(encodeURIComponent(s)))}
   function b64dec(s){return decodeURIComponent(escape(atob(s.replace(/\s/g,''))))}
   function gh(path,opt){
@@ -169,83 +240,81 @@ details.sec[open]>summary::after{transform:rotate(180deg)}
     });
   }
   function explain(e){
-    if(e.code===401)return 'مفتاح GitHub غلط أو انتهت صلاحيته. اعمل واحد جديد.';
-    if(e.code===403||e.code===404)return 'الـ Token مالوش صلاحية على mixateg/menu. اتأكد إنك اخترت الـ repo وصلاحية Contents: Read and write (ولو الـ Organization طالبة موافقة، وافق عليه من إعداداتها).';
-    if(e.code===409)return 'حد عدّل المنيو من مكان تاني. اعمل تحديث للصفحة وعدّل تاني.';
+    if(e.code===401)return 'مفتاح GitHub غلط أو انتهت صلاحيته. اعمل واحد جديد من "إعداد الحساب".';
+    if(e.code===403||e.code===404)return 'المفتاح مالوش صلاحية على mixateg/menu. اتأكد من Only select repositories ← menu، و Contents: Read and write.';
+    if(e.code===409)return 'حد عدّل المنيو من جهاز تاني. اعمل تحديث للصفحة وعدّل تاني.';
     return 'حصلت مشكلة: '+e.message;
   }
-  function markDirty(){dirty=true;$('save').disabled=false}
-  window.addEventListener('beforeunload',function(e){if(dirty){e.preventDefault();e.returnValue=''}});
 
-  // ---- accounts: the GitHub token is stored in admins.json encrypted with each admin's password
-  // (PBKDF2-SHA256 -> AES-GCM, username bound as additional data). Nothing readable is published.
-  var USERS='admins.json', ITER=600000, users=[], usersSha='';
-  var enc=new TextEncoder(), dec=new TextDecoder();
+  // ---------- accounts: token stored in admins.json, encrypted per admin (PBKDF2-SHA256 -> AES-GCM, username as AAD)
+  var ITER=600000, te=new TextEncoder(), td=new TextDecoder();
   function toB64(buf){var s='',b=new Uint8Array(buf);for(var i=0;i<b.length;i++)s+=String.fromCharCode(b[i]);return btoa(s)}
   function fromB64(s){var b=atob(s),a=new Uint8Array(b.length);for(var i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a}
   function norm(u){return String(u||'').trim().toLowerCase()}
   function keyFor(pass,salt,iter){
-    return crypto.subtle.importKey('raw',enc.encode(pass),'PBKDF2',false,['deriveKey']).then(function(k){
+    return crypto.subtle.importKey('raw',te.encode(pass),'PBKDF2',false,['deriveKey']).then(function(k){
       return crypto.subtle.deriveKey({name:'PBKDF2',hash:'SHA-256',salt:salt,iterations:iter},k,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])});
   }
   function seal(user,pass,tok){
     var salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12));
     return keyFor(pass,salt,ITER).then(function(k){
-      return crypto.subtle.encrypt({name:'AES-GCM',iv:iv,additionalData:enc.encode(norm(user))},k,enc.encode(tok))
+      return crypto.subtle.encrypt({name:'AES-GCM',iv:iv,additionalData:te.encode(norm(user))},k,te.encode(tok))
     }).then(function(ct){return {u:norm(user),salt:toB64(salt),iv:toB64(iv),ct:toB64(ct),it:ITER}});
   }
   function unseal(rec,pass){
     return keyFor(pass,fromB64(rec.salt),rec.it||ITER).then(function(k){
-      return crypto.subtle.decrypt({name:'AES-GCM',iv:fromB64(rec.iv),additionalData:enc.encode(rec.u)},k,fromB64(rec.ct))
-    }).then(function(b){return dec.decode(b)});
+      return crypto.subtle.decrypt({name:'AES-GCM',iv:fromB64(rec.iv),additionalData:te.encode(rec.u)},k,fromB64(rec.ct))
+    }).then(function(b){return td.decode(b)});
   }
-  // public read of admins.json straight from the repo (fresher than the Pages copy)
   function fetchUsers(){
+    function site(){return fetch(USERS+'?v='+Date.now(),{cache:'no-store'}).then(function(r){return r.ok?r.json():[]}).catch(function(){return []})}
     return fetch(API+USERS+'?ref='+BRANCH+'&t='+Date.now(),{headers:{'Accept':'application/vnd.github+json'}}).then(function(r){
       if(r.status===404)return [];
-      if(!r.ok)return fetch(USERS+'?v='+Date.now(),{cache:'no-store'}).then(function(r2){return r2.ok?r2.json():[]});
+      if(!r.ok)return site();
       return r.json().then(function(j){return JSON.parse(b64dec(j.content))});
-    }).catch(function(){return fetch(USERS+'?v='+Date.now(),{cache:'no-store'}).then(function(r2){return r2.ok?r2.json():[]}).catch(function(){return []})});
+    }).catch(site);
   }
-  function show(which){['login','setup'].forEach(function(id){$(id).hidden=id!==which});if(which==='setup')$('resetWarn').hidden=!users.length}
-  function remember(tok,persist){
-    try{sessionStorage.setItem(TKEY,tok)}catch(e){}
-    set(TKEY,persist?tok:'');
+  function showAuth(which){
+    $('loading').hidden=true;$('auth').hidden=false;
+    ['login','setup'].forEach(function(id){$(id).hidden=id!==which});
+    if(which==='setup')$('resetWarn').hidden=!users.length;
   }
-  function forget(){set(TKEY,'');try{sessionStorage.removeItem(TKEY)}catch(e){}}
-  function savedToken(){var t=get(TKEY);if(!t){try{t=sessionStorage.getItem(TKEY)||''}catch(e){}}return t}
+  function remember(tok,user,persist){sset(TKEY,tok);sset(UKEY,user);set(TKEY,persist?tok:'');set(UKEY,persist?user:'')}
+  function forget(){set(TKEY,'');set(UKEY,'');sset(TKEY,'');sset(UKEY,'')}
 
-  function open(tok){
-    token=tok;status('جاري التحميل…',false,true);
+  function openEditor(tok){
+    token=tok;say('جاري تحميل المنيو…',false,true);
     return gh(PATH+'?ref='+BRANCH).then(function(j){
       sha=j.sha;M=JSON.parse(b64dec(j.content));
       return gh(USERS+'?ref='+BRANCH).then(function(u){usersSha=u.sha;users=JSON.parse(b64dec(u.content))},function(e){if(e.code!==404)throw e;usersSha='';users=[]});
     }).then(function(){
-      $('login').hidden=true;$('setup').hidden=true;$('editor').hidden=false;$('savebar').hidden=false;$('logout').hidden=false;
-      render();renderUsers();status('تم التحميل ✓');
+      me=get(UKEY)||sget(UKEY);
+      $('auth').hidden=true;$('app').hidden=false;$('adminbar').hidden=false;
+      $('who').textContent=me?('أهلاً '+me):'';
+      render();renderSettings();say('✓ المنيو جاهز للتعديل');
     });
   }
   function tokenFail(e){
     forget();token='';
-    if(e.code===401){status('مفتاح GitHub انتهت صلاحيته. محتاج صاحب الحساب يدوس "إعداد الحساب" ويعمل مفتاح جديد.',true);show('login')}
-    else status(explain(e),true);
+    say(e.code===401?'مفتاح GitHub انتهت صلاحيته. صاحب الحساب يدوس "إعداد الحساب" ويحط مفتاح جديد.':explain(e),true);
+    showAuth(users.length?'login':'setup');
   }
 
   $('loginForm').addEventListener('submit',function(e){
     e.preventDefault();
     var u=norm($('lu').value),p=$('lp').value;
-    if(!u||!p){status('اكتب اسم المستخدم وكلمة السر',true);return}
+    if(!u||!p){say('اكتب اسم المستخدم وكلمة السر',true);return}
     var rec=users.filter(function(x){return x.u===u})[0];
-    $('loginBtn').disabled=true;status('جاري التحقق…',false,true);
-    (rec?unseal(rec,p):Promise.reject({bad:1})).then(function(tok){
-      remember(tok,$('remember').checked);$('lp').value='';return open(tok).catch(tokenFail);
-    },function(){status('اسم المستخدم أو كلمة السر غلط',true)}).then(function(){$('loginBtn').disabled=false});
+    $('loginBtn').disabled=true;say('جاري التحقق…',false,true);
+    (rec?unseal(rec,p):Promise.reject(0)).then(function(tok){
+      remember(tok,u,$('remember').checked);$('lp').value='';return openEditor(tok).catch(tokenFail);
+    },function(){say('اسم المستخدم أو كلمة السر غلط',true)}).then(function(){$('loginBtn').disabled=false});
   });
-  $('toSetup').onclick=function(){show('setup')};
-  $('toLogin').onclick=function(){show('login')};
+  $('toSetup').onclick=function(){showAuth('setup')};
+  $('toLogin').onclick=function(){showAuth('login')};
 
   function checkPass(u,p,p2){
-    if(!/^[a-z0-9._-]{3,30}$/.test(u))return 'اسم المستخدم لازم يكون 3 حروف إنجليزي/أرقام على الأقل، من غير مسافات';
+    if(!/^[a-z0-9._-]{3,30}$/.test(u))return 'اسم المستخدم: 3 حروف إنجليزي/أرقام على الأقل، من غير مسافات';
     if(p.length<10)return 'كلمة السر لازم تكون 10 حروف/أرقام على الأقل';
     if(p2!=null&&p!==p2)return 'كلمتين السر مش زي بعض';
     return '';
@@ -256,53 +325,29 @@ details.sec[open]>summary::after{transform:rotate(180deg)}
   }
   $('setupBtn').onclick=function(){
     var tok=$('tok').value.trim(),u=norm($('su').value),p=$('sp').value,v=checkPass(u,p,$('sp2').value);
-    if(!tok){status('الصق الـ Token الأول',true);return}
-    if(v){status(v,true);return}
+    if(!tok){say('الصق مفتاح GitHub الأول',true);return}
+    if(v){say(v,true);return}
     if(users.length&&!confirm('ده هيمسح الحسابات القديمة ويعمل الحساب ده بس. تكمل؟'))return;
-    var btn=$('setupBtn');btn.disabled=true;status('جاري الإعداد…',false,true);token=tok;
+    var btn=$('setupBtn');btn.disabled=true;say('جاري الإعداد…',false,true);token=tok;
     gh(PATH+'?ref='+BRANCH)
       .then(function(){return gh(USERS+'?ref='+BRANCH).then(function(j){usersSha=j.sha},function(e){if(e.code!==404)throw e;usersSha=''})})
       .then(function(){return seal(u,p,tok)})
       .then(function(rec){return putUsers([rec],'إعداد حساب الأدمن')})
-      .then(function(){remember(tok,true);$('tok').value='';$('sp').value='';$('sp2').value='';return open(tok)})
-      .then(function(){status('تم ✓ من دلوقتي ادخل باسم المستخدم "'+u+'" وكلمة السر',false)})
-      .catch(function(e){token='';status(explain(e),true)})
+      .then(function(){remember(tok,u,true);$('tok').value='';$('sp').value='';$('sp2').value='';return openEditor(tok)})
+      .then(function(){say('✓ تم. من دلوقتي ادخل باسم "'+u+'" وكلمة السر')})
+      .catch(function(e){token='';say(explain(e),true)})
       .then(function(){btn.disabled=false});
   };
 
-  function renderUsers(){
-    var ul=$('users');ul.innerHTML='';
-    users.forEach(function(r){
-      var li=el('li');li.appendChild(el('span',null,r.u));
-      var del=el('button','danger','مسح');del.type='button';del.disabled=users.length<2;
-      del.onclick=function(){if(!confirm('تمسح حساب "'+r.u+'"؟'))return;
-        status('جاري الحفظ…',false,true);
-        putUsers(users.filter(function(x){return x!==r}),'مسح حساب أدمن').then(function(){renderUsers();status('اتمسح ✓')}).catch(function(e){status(explain(e),true)})};
-      li.appendChild(del);ul.appendChild(li);
-    });
-  }
-  $('addUser').onclick=function(){
-    var u=norm($('nu').value),p=$('np').value,v=checkPass(u,p);
-    if(v){status(v,true);return}
-    var btn=$('addUser');btn.disabled=true;status('جاري الحفظ…',false,true);
-    seal(u,p,token).then(function(rec){
-      var list=users.filter(function(x){return x.u!==u}).concat([rec]);
-      return putUsers(list,'حفظ حساب أدمن');
-    }).then(function(){$('nu').value='';$('np').value='';renderUsers();status('الحساب "'+u+'" اتحفظ ✓')})
-      .catch(function(e){status(explain(e),true)}).then(function(){btn.disabled=false});
-  };
+  // ---------- dirty tracking
+  function markDirty(){dirty++;$('save').disabled=false;$('dirtyN').textContent='●'}
+  function clean(){dirty=0;$('save').disabled=true;$('dirtyN').textContent=''}
+  window.addEventListener('beforeunload',function(e){if(dirty){e.preventDefault();e.returnValue=''}});
 
-  $('logout').onclick=function(){if(dirty&&!confirm('فيه تعديلات مش محفوظة. تخرج برضه؟'))return;forget();dirty=false;location.reload()};
-
-  function num(v){if(v===''||v==null)return null;var n=parseInt(v,10);return isNaN(n)?null:n}
-  function uid(){return 'i'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
-  function inp(type,val,on,ph){var i=el('input');i.type=type;i.value=val==null?'':val;if(ph)i.placeholder=ph;
-    i.addEventListener('input',function(){on(i.value);markDirty()});if(type==='number'){i.min=0;i.inputMode='numeric'}return i}
-
-  // image upload: shrink on the phone, commit to images/, return the path
+  // ---------- images
   var pickCb=null,previews={}; // freshly uploaded images aren't on Pages until the next build
   $('filePick').addEventListener('change',function(){var f=this.files[0];this.value='';if(f&&pickCb)pickCb(f)});
-  function pickImage(done){pickCb=done;$('filePick').click()}
+  function src(v){return previews[v]||v}
   function uploadImage(file,maxW){
     return new Promise(function(res,rej){
       var img=new Image(),url=URL.createObjectURL(file);
@@ -317,99 +362,186 @@ details.sec[open]>summary::after{transform:rotate(180deg)}
       return gh(p,{method:'PUT',body:JSON.stringify({message:'رفع صورة للمنيو',content:b64,branch:BRANCH})}).then(function(){previews[p]='data:image/jpeg;base64,'+b64;return p});
     });
   }
-  function imageEditor(obj,field,maxW,label){
-    var row=el('div','imgrow'),th=el('img');th.alt='';
-    function paint(){var v=obj[field];th.src=v?(previews[v]||v):'';th.style.visibility=v?'visible':'hidden'}
-    var col=el('div','col'),u=inp('url',obj[field],function(v){obj[field]=v.trim();paint()},label||'لينك الصورة');u.dir='ltr';
-    var tools=el('div','tools'),up=el('button','ghost','📷 رفع صورة من الجهاز');up.type='button';
-    up.onclick=function(){pickImage(function(f){
-      status('جاري رفع الصورة…',false,true);up.disabled=true;
-      uploadImage(f,maxW).then(function(p){obj[field]=p;u.value=p;paint();markDirty();status('الصورة اترفعت ✓ متنساش تدوس حفظ')})
-        .catch(function(e){status(explain(e),true)}).then(function(){up.disabled=false});
-    })};
-    tools.appendChild(up);col.append(u,tools);row.append(th,col);paint();return row;
+  function changeImage(obj,field,maxW){
+    pickCb=function(f){
+      say('جاري رفع الصورة…',false,true);
+      uploadImage(f,maxW).then(function(p){obj[field]=p;markDirty();render();say('✓ الصورة اتغيرت — متنساش تدوس حفظ')}).catch(function(e){say(explain(e),true)});
+    };
+    $('filePick').click();
   }
+  function imageLink(obj,field){
+    var v=prompt('الصق لينك الصورة:',obj[field]||'');if(v==null)return;
+    obj[field]=v.trim();markDirty();render();
+  }
+
+  // ---------- sheets
+  var bg=$('sheetBg'),openSheetEl=null,lastFocus=null;
+  function openSheet(s){closeSheet(true);lastFocus=document.activeElement;openSheetEl=s;s.hidden=false;
+    requestAnimationFrame(function(){s.classList.add('on');bg.classList.add('on')});document.body.classList.add('lock');
+    var x=s.querySelector('[data-close]');if(x)x.focus()}
+  function closeSheet(quick){if(!openSheetEl)return;var s=openSheetEl;openSheetEl=null;s.classList.remove('on');bg.classList.remove('on');
+    document.body.classList.remove('lock');if(quick===true)s.hidden=true;else setTimeout(function(){if(!s.classList.contains('on'))s.hidden=true},300);
+    if(lastFocus&&quick!==true&&document.contains(lastFocus))lastFocus.focus()}
+  bg.onclick=function(){closeSheet()};
+  document.querySelectorAll('[data-close]').forEach(function(b){b.onclick=function(){closeSheet()}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet()});
+
+  function actButton(icon,label,fn,cls,dis){
+    var b=el('button',cls);b.type='button';b.appendChild(el('i',null,icon));b.appendChild(document.createTextNode(label));
+    b.disabled=!!dis;b.onclick=function(){closeSheet(true);fn()};$('acts').appendChild(b);
+  }
+  function itemActions(S,it){
+    var idx=S.items.indexOf(it);$('acts').innerHTML='';
+    $('actTitle').textContent=it.name||'صنف جديد';
+    actButton(it.hidden?'👁️':'🚫',it.hidden?'إظهار في المنيو':'إخفاء مؤقتًا (خلص من المحل)',function(){it.hidden=!it.hidden;markDirty();render();flash(it.id);say(it.hidden?'اتخفى — دوس حفظ':'هيظهر — دوس حفظ')});
+    if(S.layout==='cards'){
+      actButton('📷','تغيير الصورة من الجهاز',function(){changeImage(it,'img',800)});
+      actButton('🔗','حط لينك صورة',function(){imageLink(it,'img')});
+    }
+    actButton('⬆️','قدّمه',function(){move(S,idx,-1)},'',idx===0);
+    actButton('⬇️','أخّره',function(){move(S,idx,1)},'',idx===S.items.length-1);
+    actButton('🗑️','مسح الصنف نهائيًا',function(){if(confirm('تمسح "'+(it.name||'الصنف')+'" نهائيًا؟')){S.items.splice(S.items.indexOf(it),1);markDirty();render();say('اتمسح — دوس حفظ')}},'del');
+    openSheet($('actSheet'));
+  }
+  function sectionImageActions(S){
+    $('acts').innerHTML='';$('actTitle').textContent='صورة '+S.title;
+    actButton('📷','صورة من الجهاز',function(){changeImage(S,'banner',1200)});
+    actButton('🔗','حط لينك صورة',function(){imageLink(S,'banner')});
+    if(S.banner)actButton('🗑️','شيل الصورة',function(){S.banner='';markDirty();render()},'del');
+    openSheet($('actSheet'));
+  }
+  function move(S,i,d){var j=i+d;if(j<0||j>=S.items.length)return;var x=S.items[i];S.items[i]=S.items[j];S.items[j]=x;markDirty();render();flash(x.id)}
+  function flash(id){var n=document.querySelector('[data-item="'+id+'"]');if(!n)return;n.classList.remove('flash');void n.offsetWidth;n.classList.add('flash');
+    var r=n.getBoundingClientRect();if(r.top<80||r.bottom>innerHeight-90)n.scrollIntoView({behavior:'smooth',block:'center'})}
+
+  // ---------- inline editors
+  function num(v){if(v===''||v==null)return null;var n=parseInt(String(v).replace(/[٠-٩]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'.indexOf(d)}).replace(/[^\d]/g,''),10);return isNaN(n)?null:n}
+  function text(val,on,ph,label){var i=el('input','ei');i.type='text';i.value=val||'';if(ph)i.placeholder=ph;i.setAttribute('aria-label',label||ph||'');
+    i.addEventListener('input',function(){on(i.value);markDirty()});return i}
+  function price(val,on,ph,label){var i=el('input','ei pi');i.type='text';i.inputMode='numeric';i.value=val==null?'':val;i.placeholder=ph||'السعر';
+    i.setAttribute('aria-label',label||'السعر');
+    i.addEventListener('input',function(){on(num(i.value));markDirty()});
+    i.addEventListener('blur',function(){var n=num(i.value);i.value=n==null?'':n});
+    i.addEventListener('focus',function(){i.select()});return i}
+  function uid(){return 'i'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
 
   function render(){
-    $('fee').value=M.deliveryFee||0;$('fee').oninput=function(){M.deliveryFee=num(this.value)||0;markDirty()};
-    $('wa').value=M.whatsapp||'';$('wa').oninput=function(){M.whatsapp=this.value.trim();markDirty()};
-    var wrap=$('sections'),open={};
-    wrap.querySelectorAll('details[open]').forEach(function(d){open[d.dataset.id]=1});
-    wrap.innerHTML='';
+    var y=window.scrollY,menu=$('menu'),track=$('track');menu.innerHTML='';track.innerHTML='';var listCount=0;
     M.sections.forEach(function(S){
-      var d=el('details','sec');d.dataset.id=S.id;if(open[S.id])d.open=true;
-      var sm=el('summary');var t=el('span','t',S.title);sm.append(t,el('span','c',S.items.length+' صنف'));d.appendChild(sm);
-      var b=el('div','secbody');
-      var r=el('div','row2');
-      var l1=el('label',null,'اسم القسم');var i1=inp('text',S.title,function(v){S.title=v;t.textContent=v});l1.appendChild(i1);
-      var l2=el('label',null,'الاسم في الشريط العلوي');var i2=inp('text',S.short,function(v){S.short=v});l2.appendChild(i2);
-      r.append(l1,l2);b.appendChild(r);
-      var l3=el('label',null,'ملاحظة تحت العنوان (اختياري)');l3.appendChild(inp('text',S.note,function(v){S.note=v}));b.appendChild(l3);
-      if(S.layout!=='cards'){b.appendChild(el('label',null,'صورة القسم (اختياري)'));b.appendChild(imageEditor(S,'banner',1200))}
+      var sec=el('section');sec.id=S.id;
+      var head=el('div','head'),h2=el('h2','tape '+(S.color||'red')),sp=el('span');
+      sp.appendChild(text(S.title,function(v){S.title=v},'اسم القسم'));
+      h2.appendChild(sp);head.appendChild(h2);sec.appendChild(head);
+      if(S.layout!=='cards'){
+        if(S.banner){var bw=el('div','bannerwrap'),bi=el('img','banner');bi.src=src(S.banner);bi.alt='';bw.appendChild(bi);
+          var cb=el('button','chg','📷 تغيير الصورة');cb.type='button';cb.onclick=function(){sectionImageActions(S)};bw.appendChild(cb);sec.appendChild(bw)}
+        else{var ab=el('button','addimg','+ صورة للقسم (اختياري)');ab.type='button';ab.onclick=function(){sectionImageActions(S)};sec.appendChild(ab)}
+      }
+      var note=el('p','note');note.appendChild(text(S.note,function(v){S.note=v},'ملاحظة تحت العنوان (اختياري)'));sec.appendChild(note);
 
-      S.items.forEach(function(it,idx){
-        var box=el('div','item'+(it.hidden?' off':''));
-        var top=el('div','top');top.appendChild(inp('text',it.name,function(v){it.name=v},'اسم الصنف'));box.appendChild(top);
-        var pr=el('div','prices');
-        if(S.sizes&&S.sizes.length){
-          it.prices=it.prices||[];
-          S.sizes.forEach(function(size,i){var l=el('label',null,size+':');
-            l.appendChild(inp('number',it.prices[i],function(v){it.prices[i]=num(v)},'مش متاح'));pr.appendChild(l)});
-        }else{var l=el('label',null,'السعر:');l.appendChild(inp('number',it.price,function(v){it.price=num(v)}));pr.appendChild(l)}
-        box.appendChild(pr);
-        if(S.layout==='cards')box.appendChild(imageEditor(it,'img',800));
-        var tools=el('div','tools');
-        var sw=el('label','sw'),cb=el('input');cb.type='checkbox';cb.checked=!it.hidden;
-        var swt=el('span',null,it.hidden?'مخفي':'متاح');
-        cb.onchange=function(){it.hidden=!cb.checked;swt.textContent=it.hidden?'مخفي':'متاح';box.classList.toggle('off',it.hidden);markDirty()};
-        sw.append(cb,swt);tools.appendChild(sw);
-        function mv(dir){var j=idx+dir;if(j<0||j>=S.items.length)return;var x=S.items[idx];S.items[idx]=S.items[j];S.items[j]=x;markDirty();render()}
-        var up=el('button','ghost','▲');up.type='button';up.title='لفوق';up.onclick=function(){mv(-1)};up.disabled=idx===0;
-        var dn=el('button','ghost','▼');dn.type='button';dn.title='لتحت';dn.onclick=function(){mv(1)};dn.disabled=idx===S.items.length-1;
-        var del=el('button','danger','مسح');del.type='button';
-        del.onclick=function(){if(confirm('تمسح "'+it.name+'" نهائيًا؟ (لو عايز تخفيه مؤقتًا استخدم زرار متاح)')){S.items.splice(idx,1);markDirty();render()}};
-        tools.append(up,dn,del);box.appendChild(tools);
-        b.appendChild(box);
-      });
-      var add=el('button','add','+ إضافة صنف في '+S.title);add.type='button';
-      add.onclick=function(){
-        var it={id:uid(),name:'',hidden:false};
-        if(S.sizes&&S.sizes.length)it.prices=S.sizes.map(function(){return null});else it.price=null;
-        if(S.layout==='cards'){it.img='';it.pos='50% 50%'}
-        S.items.push(it);markDirty();render();
-        var boxes=document.querySelector('details[data-id="'+S.id+'"]').querySelectorAll('.item');
-        var last=boxes[boxes.length-1];last.scrollIntoView({behavior:'smooth',block:'center'});last.querySelector('input').focus();
-      };
-      b.appendChild(add);d.appendChild(b);wrap.appendChild(d);
+      if(S.layout==='cards'){
+        var grid=el('div','grid');
+        S.items.forEach(function(it){
+          var card=el('article','card'+(it.hidden?' off':''));card.dataset.item=it.id;
+          var ph=el('div','ph');
+          if(it.img){var im=el('img');im.src=src(it.img);im.style.objectPosition=it.pos||'50% 50%';im.alt='';im.loading='lazy';ph.appendChild(im)}
+          else ph.appendChild(el('span','noimg','🍔'));
+          var chg=el('button','chg','📷 تغيير');chg.type='button';chg.onclick=function(){changeImage(it,'img',800)};ph.appendChild(chg);
+          card.appendChild(ph);
+          var more=el('button','more','⋯');more.type='button';more.setAttribute('aria-label','خيارات '+(it.name||'الصنف'));more.onclick=function(){itemActions(S,it)};card.appendChild(more);
+          var h3=el('h3');h3.appendChild(text(it.name,function(v){it.name=v},'اسم الصنف'));card.appendChild(h3);
+          if(S.sizes&&S.sizes.length){
+            it.prices=it.prices||[];var sz=el('div','sz');
+            S.sizes.forEach(function(size,i){var o=el('div','opt');o.appendChild(el('i',null,size));
+              o.appendChild(price(it.prices[i],function(v){it.prices[i]=v},'مش متاح',size+' '+it.name));sz.appendChild(o)});
+            card.appendChild(sz);
+          }else{var one=el('div','sz one');one.appendChild(price(it.price,function(v){it.price=v},'السعر','سعر '+it.name));card.appendChild(one)}
+          grid.appendChild(card);
+        });
+        var add=el('button','addcard');add.type='button';add.appendChild(el('b',null,'+'));add.appendChild(document.createTextNode('صنف جديد'));
+        add.onclick=function(){addItem(S)};grid.appendChild(add);sec.appendChild(grid);
+      }else{
+        listCount++;sec.className='half'+(listCount%2?'':' even');
+        var ul=el('ul','list');
+        S.items.forEach(function(it){
+          var li=el('li',it.hidden?'off':'');li.dataset.item=it.id;
+          var n=el('span','n');n.appendChild(text(it.name,function(v){it.name=v},'اسم الصنف'));li.appendChild(n);
+          li.appendChild(el('span','dots'));
+          var pw=el('span','pw');pw.appendChild(price(it.price,function(v){it.price=v},'السعر','سعر '+it.name));li.appendChild(pw);
+          var more=el('button','more','⋯');more.type='button';more.setAttribute('aria-label','خيارات '+(it.name||'الصنف'));more.onclick=function(){itemActions(S,it)};li.appendChild(more);
+          ul.appendChild(li);
+        });
+        var li2=el('li');li2.style.padding='0';var ar=el('button','addrow','+ صنف جديد');ar.type='button';ar.onclick=function(){addItem(S)};li2.appendChild(ar);ul.appendChild(li2);
+        sec.appendChild(ul);
+      }
+      menu.appendChild(sec);
+      var a=el('a',null,S.short||S.title);a.href='#'+S.id;track.appendChild(a);
     });
+    window.scrollTo(0,y);
+  }
+  function addItem(S){
+    var it={id:uid(),name:'',hidden:false};
+    if(S.sizes&&S.sizes.length)it.prices=S.sizes.map(function(){return null});else it.price=null;
+    if(S.layout==='cards'){it.img='';it.pos='50% 50%'}
+    S.items.push(it);markDirty();render();
+    var n=document.querySelector('[data-item="'+it.id+'"]');n.scrollIntoView({behavior:'smooth',block:'center'});
+    setTimeout(function(){n.querySelector('.ei').focus({preventScroll:true})},350);
   }
 
+  // ---------- save
   function validate(){
     for(var s=0;s<M.sections.length;s++){var S=M.sections[s];
-      if(!S.title.trim())return 'فيه قسم من غير اسم';
+      if(!String(S.title||'').trim())return {msg:'فيه قسم من غير اسم'};
       for(var i=0;i<S.items.length;i++){var it=S.items[i];
-        if(!String(it.name||'').trim())return 'فيه صنف من غير اسم في "'+S.title+'"';
+        if(!String(it.name||'').trim())return {msg:'فيه صنف من غير اسم في "'+S.title+'"',id:it.id};
         if(it.hidden)continue;
-        if(S.sizes&&S.sizes.length){if(!(it.prices||[]).some(function(p){return p!=null}))return '"'+it.name+'" مالوش سعر';}
-        else if(it.price==null)return '"'+it.name+'" مالوش سعر';
+        var ok=(S.sizes&&S.sizes.length)?(it.prices||[]).some(function(p){return p!=null}):it.price!=null;
+        if(!ok)return {msg:'"'+it.name+'" مالوش سعر — اكتب السعر أو اخفيه',id:it.id};
       }}
-    return '';
+    return null;
   }
   $('save').onclick=function(){
-    if(saving)return;var v=validate();if(v){status(v,true);return}
-    saving=true;$('save').disabled=true;status('جاري الحفظ…',false,true);
+    if(saving)return;var v=validate();if(v){say(v.msg,true);if(v.id)flash(v.id);return}
+    saving=true;$('save').disabled=true;say('جاري الحفظ…',false,true);
+    M.sections.forEach(function(S){S.title=String(S.title).trim();S.items.forEach(function(it){it.name=String(it.name).trim()})});
     gh(PATH,{method:'PUT',body:JSON.stringify({message:'تحديث المنيو من لوحة التحكم',content:b64enc(JSON.stringify(M,null,1)+'\n'),sha:sha,branch:BRANCH})})
-      .then(function(j){sha=j.content.sha;dirty=false;status('اتحفظ ✓ هيظهر في المنيو خلال دقيقة أو اتنين')})
-      .catch(function(e){$('save').disabled=false;status(explain(e),true)})
+      .then(function(j){sha=j.content.sha;clean();say('✓ اتحفظ — هيظهر في المنيو خلال دقيقة أو اتنين')})
+      .catch(function(e){$('save').disabled=false;say(explain(e),true)})
       .then(function(){saving=false});
   };
 
-  if(!window.crypto||!crypto.subtle){status('المتصفح ده مش مدعوم. افتح الصفحة من Chrome أو Safari حديث.',true,true)}
+  // ---------- settings sheet
+  $('openSettings').onclick=function(){renderSettings();openSheet($('setSheet'))};
+  $('fee').addEventListener('input',function(){M.deliveryFee=num(this.value)||0;markDirty()});
+  $('wa').addEventListener('input',function(){M.whatsapp=this.value.trim();markDirty()});
+  function renderSettings(){
+    $('fee').value=M.deliveryFee||0;$('wa').value=M.whatsapp||'';
+    var ul=$('users');ul.innerHTML='';
+    users.forEach(function(r){
+      var li=el('li'),s=el('span',null,r.u);if(r.u===me)s.appendChild(el('span','me','(إنت)'));li.appendChild(s);
+      var del=el('button','smallbtn del','مسح');del.type='button';del.disabled=users.length<2;
+      del.onclick=function(){if(!confirm('تمسح حساب "'+r.u+'"؟'))return;say('جاري الحفظ…',false,true);
+        putUsers(users.filter(function(x){return x!==r}),'مسح حساب أدمن').then(function(){renderSettings();say('✓ الحساب اتمسح')}).catch(function(e){say(explain(e),true)})};
+      li.appendChild(del);ul.appendChild(li);
+    });
+  }
+  $('addUser').onclick=function(){
+    var u=norm($('nu').value),p=$('np').value,v=checkPass(u,p);
+    if(v){say(v,true);return}
+    var btn=$('addUser');btn.disabled=true;say('جاري الحفظ…',false,true);
+    seal(u,p,token).then(function(rec){return putUsers(users.filter(function(x){return x.u!==u}).concat([rec]),'حفظ حساب أدمن')})
+      .then(function(){$('nu').value='';$('np').value='';renderSettings();say('✓ الحساب "'+u+'" اتحفظ')})
+      .catch(function(e){say(explain(e),true)}).then(function(){btn.disabled=false});
+  };
+  $('logout').onclick=function(){if(dirty&&!confirm('فيه تعديلات مش محفوظة. تخرج برضه؟'))return;forget();dirty=0;location.reload()};
+
+  // ---------- boot
+  if(!window.crypto||!crypto.subtle){$('loading').textContent='المتصفح ده مش مدعوم. افتح الصفحة من Chrome أو Safari حديث.'}
   else fetchUsers().then(function(list){
     users=Array.isArray(list)?list:[];
-    var t=savedToken();
-    if(t)open(t).catch(function(e){tokenFail(e);show(users.length?'login':'setup')});
-    else show(users.length?'login':'setup');
+    var t=get(TKEY)||sget(TKEY);
+    if(t){$('loading').hidden=true;openEditor(t).catch(tokenFail)}
+    else showAuth(users.length?'login':'setup');
   });
 })();
 </script>
