@@ -75,6 +75,12 @@ details.sec[open]>summary::after{transform:rotate(180deg)}
   padding:9px 16px;border-radius:12px;max-width:92vw;display:none;text-align:center}
 .status.on{display:block}
 .status.err{border-color:var(--flame);color:#ffb3b3}
+.chk{display:flex;align-items:center;gap:8px;color:var(--cream);margin-top:12px;cursor:pointer}
+.chk input{width:18px;height:18px;accent-color:var(--mustard)}
+.linkbtn{background:none;color:var(--mustard);text-decoration:underline;padding:4px 6px;font-weight:400}
+.users{list-style:none;margin:0 0 6px;padding:0}
+.users li{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line);direction:ltr}
+.users li span{font-weight:600}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -83,9 +89,21 @@ details.sec[open]>summary::after{transform:rotate(180deg)}
 <div class="status" id="status" role="status" aria-live="polite"></div>
 
 <main>
-  <section class="box" id="login">
+  <section class="box" id="login" hidden>
     <h2>تسجيل الدخول</h2>
-    <p class="help">الصفحة دي بتعدّل المنيو مباشرة على GitHub. محتاج <b>مفتاح (Token)</b> مرة واحدة بس على كل جهاز:</p>
+    <form id="loginForm" novalidate>
+      <label for="lu">اسم المستخدم</label><input type="text" id="lu" dir="ltr" autocomplete="username" autocapitalize="off" spellcheck="false">
+      <label for="lp">كلمة السر</label><input type="password" id="lp" dir="ltr" autocomplete="current-password">
+      <label class="chk"><input type="checkbox" id="remember" checked> افتكرني على الجهاز ده</label>
+      <p style="margin:12px 0 0"><button class="pri" type="submit" id="loginBtn">دخول</button></p>
+    </form>
+    <p class="help" style="margin-top:18px">أول مرة تفتح لوحة التحكم، أو المفتاح انتهت صلاحيته؟ <button class="linkbtn" type="button" id="toSetup">إعداد الحساب</button></p>
+  </section>
+
+  <section class="box" id="setup" hidden>
+    <h2>إعداد لوحة التحكم</h2>
+    <p class="help">الخطوة دي بيعملها صاحب الحساب <b>مرة واحدة</b> (أو لما المفتاح تنتهي صلاحيته). بعدها الدخول بيبقى باسم المستخدم وكلمة السر بس، من أي جهاز.</p>
+    <p class="help"><b>1) اعمل مفتاح (Token) من GitHub:</b></p>
     <div class="help"><ol>
       <li>افتح <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">صفحة إنشاء Token</a>.</li>
       <li>في <b>Token name</b> اكتب <code>menu admin</code>، وفي <b>Expiration</b> اختار أطول مدة متاحة.</li>
@@ -96,8 +114,14 @@ details.sec[open]>summary::after{transform:rotate(180deg)}
     </ol></div>
     <label for="tok">الـ Token</label>
     <input type="password" id="tok" dir="ltr" autocomplete="off" placeholder="github_pat_...">
-    <p style="margin:12px 0 0"><button class="pri" id="loginBtn" type="button">دخول</button></p>
-    <p class="help">المفتاح بيتحفظ على الجهاز ده بس. متديهوش لحد، ولو اتسرّب امسحه من نفس صفحة GitHub.</p>
+    <p class="help" style="margin-top:14px"><b>2) اختار اسم مستخدم وكلمة سر للدخول:</b></p>
+    <div class="row2">
+      <div><label for="su">اسم المستخدم</label><input type="text" id="su" dir="ltr" autocomplete="username" autocapitalize="off" spellcheck="false"></div>
+      <div><label for="sp">كلمة السر (10 حروف/أرقام على الأقل)</label><input type="password" id="sp" dir="ltr" autocomplete="new-password"></div>
+    </div>
+    <label for="sp2">اكتب كلمة السر تاني</label><input type="password" id="sp2" dir="ltr" autocomplete="new-password">
+    <p style="margin:14px 0 0"><button class="pri" id="setupBtn" type="button">حفظ وإنشاء الحساب</button> <button class="linkbtn" type="button" id="toLogin">رجوع للدخول</button></p>
+    <p class="help" id="resetWarn" hidden>⚠️ فيه حسابات موجودة بالفعل. الإعداد من جديد هيمسحها ويعمل الحساب ده بس (تقدر تضيف الباقيين تاني من جوه).</p>
   </section>
 
   <div id="editor" hidden>
@@ -109,6 +133,16 @@ details.sec[open]>summary::after{transform:rotate(180deg)}
       </div>
     </section>
     <div id="sections"></div>
+    <section class="box" id="usersBox">
+      <h2>حسابات الأدمن</h2>
+      <ul class="users" id="users"></ul>
+      <p class="help">إضافة حساب جديد، أو تغيير كلمة سر حساب موجود (اكتب نفس الاسم بكلمة سر جديدة):</p>
+      <div class="row2">
+        <div><label for="nu">اسم المستخدم</label><input type="text" id="nu" dir="ltr" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+        <div><label for="np">كلمة السر (10 على الأقل)</label><input type="password" id="np" dir="ltr" autocomplete="new-password"></div>
+      </div>
+      <p style="margin:12px 0 0"><button class="pri" id="addUser" type="button">حفظ الحساب</button></p>
+    </section>
   </div>
 </main>
 
@@ -135,7 +169,7 @@ details.sec[open]>summary::after{transform:rotate(180deg)}
     });
   }
   function explain(e){
-    if(e.code===401)return 'الـ Token غلط أو انتهت صلاحيته. اعمل واحد جديد.';
+    if(e.code===401)return 'مفتاح GitHub غلط أو انتهت صلاحيته. اعمل واحد جديد.';
     if(e.code===403||e.code===404)return 'الـ Token مالوش صلاحية على mixateg/menu. اتأكد إنك اخترت الـ repo وصلاحية Contents: Read and write (ولو الـ Organization طالبة موافقة، وافق عليه من إعداداتها).';
     if(e.code===409)return 'حد عدّل المنيو من مكان تاني. اعمل تحديث للصفحة وعدّل تاني.';
     return 'حصلت مشكلة: '+e.message;
@@ -143,18 +177,122 @@ details.sec[open]>summary::after{transform:rotate(180deg)}
   function markDirty(){dirty=true;$('save').disabled=false}
   window.addEventListener('beforeunload',function(e){if(dirty){e.preventDefault();e.returnValue=''}});
 
-  function login(t){
-    token=t.trim();if(!token)return;
-    status('جاري التحميل…',false,true);
-    gh(PATH+'?ref='+BRANCH).then(function(j){
-      sha=j.sha;M=JSON.parse(b64dec(j.content));
-      set(TKEY,token);$('login').hidden=true;$('editor').hidden=false;$('savebar').hidden=false;$('logout').hidden=false;
-      render();status('تم التحميل ✓');
-    }).catch(function(e){set(TKEY,'');$('login').hidden=false;status(explain(e),true)});
+  // ---- accounts: the GitHub token is stored in admins.json encrypted with each admin's password
+  // (PBKDF2-SHA256 -> AES-GCM, username bound as additional data). Nothing readable is published.
+  var USERS='admins.json', ITER=600000, users=[], usersSha='';
+  var enc=new TextEncoder(), dec=new TextDecoder();
+  function toB64(buf){var s='',b=new Uint8Array(buf);for(var i=0;i<b.length;i++)s+=String.fromCharCode(b[i]);return btoa(s)}
+  function fromB64(s){var b=atob(s),a=new Uint8Array(b.length);for(var i=0;i<b.length;i++)a[i]=b.charCodeAt(i);return a}
+  function norm(u){return String(u||'').trim().toLowerCase()}
+  function keyFor(pass,salt,iter){
+    return crypto.subtle.importKey('raw',enc.encode(pass),'PBKDF2',false,['deriveKey']).then(function(k){
+      return crypto.subtle.deriveKey({name:'PBKDF2',hash:'SHA-256',salt:salt,iterations:iter},k,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])});
   }
-  $('loginBtn').onclick=function(){login($('tok').value)};
-  $('tok').addEventListener('keydown',function(e){if(e.key==='Enter')login(this.value)});
-  $('logout').onclick=function(){if(dirty&&!confirm('فيه تعديلات مش محفوظة. تخرج برضه؟'))return;set(TKEY,'');dirty=false;location.reload()};
+  function seal(user,pass,tok){
+    var salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12));
+    return keyFor(pass,salt,ITER).then(function(k){
+      return crypto.subtle.encrypt({name:'AES-GCM',iv:iv,additionalData:enc.encode(norm(user))},k,enc.encode(tok))
+    }).then(function(ct){return {u:norm(user),salt:toB64(salt),iv:toB64(iv),ct:toB64(ct),it:ITER}});
+  }
+  function unseal(rec,pass){
+    return keyFor(pass,fromB64(rec.salt),rec.it||ITER).then(function(k){
+      return crypto.subtle.decrypt({name:'AES-GCM',iv:fromB64(rec.iv),additionalData:enc.encode(rec.u)},k,fromB64(rec.ct))
+    }).then(function(b){return dec.decode(b)});
+  }
+  // public read of admins.json straight from the repo (fresher than the Pages copy)
+  function fetchUsers(){
+    return fetch(API+USERS+'?ref='+BRANCH+'&t='+Date.now(),{headers:{'Accept':'application/vnd.github+json'}}).then(function(r){
+      if(r.status===404)return [];
+      if(!r.ok)return fetch(USERS+'?v='+Date.now(),{cache:'no-store'}).then(function(r2){return r2.ok?r2.json():[]});
+      return r.json().then(function(j){return JSON.parse(b64dec(j.content))});
+    }).catch(function(){return fetch(USERS+'?v='+Date.now(),{cache:'no-store'}).then(function(r2){return r2.ok?r2.json():[]}).catch(function(){return []})});
+  }
+  function show(which){['login','setup'].forEach(function(id){$(id).hidden=id!==which});if(which==='setup')$('resetWarn').hidden=!users.length}
+  function remember(tok,persist){
+    try{sessionStorage.setItem(TKEY,tok)}catch(e){}
+    set(TKEY,persist?tok:'');
+  }
+  function forget(){set(TKEY,'');try{sessionStorage.removeItem(TKEY)}catch(e){}}
+  function savedToken(){var t=get(TKEY);if(!t){try{t=sessionStorage.getItem(TKEY)||''}catch(e){}}return t}
+
+  function open(tok){
+    token=tok;status('جاري التحميل…',false,true);
+    return gh(PATH+'?ref='+BRANCH).then(function(j){
+      sha=j.sha;M=JSON.parse(b64dec(j.content));
+      return gh(USERS+'?ref='+BRANCH).then(function(u){usersSha=u.sha;users=JSON.parse(b64dec(u.content))},function(e){if(e.code!==404)throw e;usersSha='';users=[]});
+    }).then(function(){
+      $('login').hidden=true;$('setup').hidden=true;$('editor').hidden=false;$('savebar').hidden=false;$('logout').hidden=false;
+      render();renderUsers();status('تم التحميل ✓');
+    });
+  }
+  function tokenFail(e){
+    forget();token='';
+    if(e.code===401){status('مفتاح GitHub انتهت صلاحيته. محتاج صاحب الحساب يدوس "إعداد الحساب" ويعمل مفتاح جديد.',true);show('login')}
+    else status(explain(e),true);
+  }
+
+  $('loginForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var u=norm($('lu').value),p=$('lp').value;
+    if(!u||!p){status('اكتب اسم المستخدم وكلمة السر',true);return}
+    var rec=users.filter(function(x){return x.u===u})[0];
+    $('loginBtn').disabled=true;status('جاري التحقق…',false,true);
+    (rec?unseal(rec,p):Promise.reject({bad:1})).then(function(tok){
+      remember(tok,$('remember').checked);$('lp').value='';return open(tok).catch(tokenFail);
+    },function(){status('اسم المستخدم أو كلمة السر غلط',true)}).then(function(){$('loginBtn').disabled=false});
+  });
+  $('toSetup').onclick=function(){show('setup')};
+  $('toLogin').onclick=function(){show('login')};
+
+  function checkPass(u,p,p2){
+    if(!/^[a-z0-9._-]{3,30}$/.test(u))return 'اسم المستخدم لازم يكون 3 حروف إنجليزي/أرقام على الأقل، من غير مسافات';
+    if(p.length<10)return 'كلمة السر لازم تكون 10 حروف/أرقام على الأقل';
+    if(p2!=null&&p!==p2)return 'كلمتين السر مش زي بعض';
+    return '';
+  }
+  function putUsers(list,msg){
+    var body={message:msg,content:b64enc(JSON.stringify(list,null,1)+'\n'),branch:BRANCH};if(usersSha)body.sha=usersSha;
+    return gh(USERS,{method:'PUT',body:JSON.stringify(body)}).then(function(j){usersSha=j.content.sha;users=list});
+  }
+  $('setupBtn').onclick=function(){
+    var tok=$('tok').value.trim(),u=norm($('su').value),p=$('sp').value,v=checkPass(u,p,$('sp2').value);
+    if(!tok){status('الصق الـ Token الأول',true);return}
+    if(v){status(v,true);return}
+    if(users.length&&!confirm('ده هيمسح الحسابات القديمة ويعمل الحساب ده بس. تكمل؟'))return;
+    var btn=$('setupBtn');btn.disabled=true;status('جاري الإعداد…',false,true);token=tok;
+    gh(PATH+'?ref='+BRANCH)
+      .then(function(){return gh(USERS+'?ref='+BRANCH).then(function(j){usersSha=j.sha},function(e){if(e.code!==404)throw e;usersSha=''})})
+      .then(function(){return seal(u,p,tok)})
+      .then(function(rec){return putUsers([rec],'إعداد حساب الأدمن')})
+      .then(function(){remember(tok,true);$('tok').value='';$('sp').value='';$('sp2').value='';return open(tok)})
+      .then(function(){status('تم ✓ من دلوقتي ادخل باسم المستخدم "'+u+'" وكلمة السر',false)})
+      .catch(function(e){token='';status(explain(e),true)})
+      .then(function(){btn.disabled=false});
+  };
+
+  function renderUsers(){
+    var ul=$('users');ul.innerHTML='';
+    users.forEach(function(r){
+      var li=el('li');li.appendChild(el('span',null,r.u));
+      var del=el('button','danger','مسح');del.type='button';del.disabled=users.length<2;
+      del.onclick=function(){if(!confirm('تمسح حساب "'+r.u+'"؟'))return;
+        status('جاري الحفظ…',false,true);
+        putUsers(users.filter(function(x){return x!==r}),'مسح حساب أدمن').then(function(){renderUsers();status('اتمسح ✓')}).catch(function(e){status(explain(e),true)})};
+      li.appendChild(del);ul.appendChild(li);
+    });
+  }
+  $('addUser').onclick=function(){
+    var u=norm($('nu').value),p=$('np').value,v=checkPass(u,p);
+    if(v){status(v,true);return}
+    var btn=$('addUser');btn.disabled=true;status('جاري الحفظ…',false,true);
+    seal(u,p,token).then(function(rec){
+      var list=users.filter(function(x){return x.u!==u}).concat([rec]);
+      return putUsers(list,'حفظ حساب أدمن');
+    }).then(function(){$('nu').value='';$('np').value='';renderUsers();status('الحساب "'+u+'" اتحفظ ✓')})
+      .catch(function(e){status(explain(e),true)}).then(function(){btn.disabled=false});
+  };
+
+  $('logout').onclick=function(){if(dirty&&!confirm('فيه تعديلات مش محفوظة. تخرج برضه؟'))return;forget();dirty=false;location.reload()};
 
   function num(v){if(v===''||v==null)return null;var n=parseInt(v,10);return isNaN(n)?null:n}
   function uid(){return 'i'+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
@@ -266,7 +404,13 @@ details.sec[open]>summary::after{transform:rotate(180deg)}
       .then(function(){saving=false});
   };
 
-  var saved=get(TKEY);if(saved)login(saved);
+  if(!window.crypto||!crypto.subtle){status('المتصفح ده مش مدعوم. افتح الصفحة من Chrome أو Safari حديث.',true,true)}
+  else fetchUsers().then(function(list){
+    users=Array.isArray(list)?list:[];
+    var t=savedToken();
+    if(t)open(t).catch(function(e){tokenFail(e);show(users.length?'login':'setup')});
+    else show(users.length?'login':'setup');
+  });
 })();
 </script>
 </body>
